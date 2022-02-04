@@ -27,4 +27,32 @@ async function loginButton(event) {
     }
 };
 
-document.querySelector("#loginBtn").addEventListener("click", loginButton)
+async function signUpForm(event){
+    event.preventDefault();
+
+    const username = document.querySelector("#userSU").value.trim();
+    const email = document.querySelector("#emailSU").value.trim();
+    const password = document.querySelector("#passSU").value.trim();
+
+    if(username && email && password){
+        const res = await fetch('/api/users', {
+            method: 'post',
+            body: JSON.stringify({
+                username, 
+                email,
+                password
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if(res.ok){
+            document.location.replace('/');
+        }else {
+            alert(res.statusText);
+        }
+    }
+}
+
+document.querySelector("#loginBtn").addEventListener("click", loginButton);
+
+document.querySelector(".signUpForm").addEventListener("submit", signUpForm);
