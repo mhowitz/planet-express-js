@@ -3,13 +3,30 @@
 </aside>
 <form>
     <h3>email: </h3>
-    <input type="text" id="emailLog" name="username">
+    <input type="text" id="emailLog" name="email" autocomplete="email">
     <h3>Password: </h3>
-    <input type="text" id="passwordLog" name="password">
+    <input id="passwordLog" name="password" type="password" autocomplete="current-password">
     <button id="loginBtn" class="">Login</button>
 </form>
 
-<div class="gallery">
+<h2>Sign Up Here:</h2>
+<form class="signUpForm">
+  <div>
+    <label for="userSU">username:</label>
+    <input type="text" id="userSU" autocomplete="username"/>
+  </div>
+  <div>
+    <label for="emailSU">email:</label>
+    <input type="text" id="emailSU" autocomplete="email"/>
+  </div>
+  <div>
+    <label for="passSU">password:</label>
+    <input type="password" id="passSU" autocomplete="new-password" />
+  </div>
+  <div>
+    <button type="submit">Sign Up</button>
+  </div>
+</form>
 
-</div>
+
 <script src="/javascript/login.js"></script>

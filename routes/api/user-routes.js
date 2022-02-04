@@ -46,11 +46,11 @@ routes.post('/', (req, res) => {
         password: req.body.password
     })
     .then(userData => {
-        // req.session.save(() => {
-        //     req.session.user_id= userData.id;
-        //     req.session.username = userData.username;
-        //     req.session.loggedIn = true;
-        // })
+        req.session.save(() => {
+            req.session.user_id= userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+        })
         res.json(userData);
     })
     .catch(err => {
