@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Articles extends Model {
+
     static upvote(body, models) {
       return models.Vote.create({
         user_id: body.user_id,
@@ -24,6 +25,7 @@ class Articles extends Model {
         });
       });
     }
+
   }
 
 // class Articles extends Model {}
@@ -66,7 +68,8 @@ Articles.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'articles'
+    modelName: 'articles',
+    timestamps: false,
 }
 );
 
