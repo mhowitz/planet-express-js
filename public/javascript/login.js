@@ -1,9 +1,7 @@
 //login form
 
-async function loginButton(event) {
-    
+async function loginButton(event) { 
     event.preventDefault();
-    console.log("work pls");
 
     const email = document.querySelector("#emailLog").value.trim();
     const password = document.querySelector("#passwordLog").value.trim();
@@ -18,17 +16,15 @@ async function loginButton(event) {
             headers: { 'Content-Type': 'application/json'}
         });
         if(res.ok) {
-            document.location.replace('/')
-            console.log('logged in!');
-            alert("logged in i think!! ")
+            document.location.replace('/');
+            alert("logged in ! ")
         } else {
-            alert(response.statusText)
+            alert(res.statusText)
         }
        
     } else {
         console.log("not working")
     }
-    console.log("hello!!!")
 };
 
 document.querySelector("#loginBtn").addEventListener("click", loginButton)
