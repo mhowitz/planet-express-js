@@ -1,4 +1,4 @@
-const {Articles }= require('../../models');
+const {Articles, Comment, User, Vote }= require('../../models');
 
 const routes = require('express').Router();
 
@@ -71,6 +71,20 @@ routes.put('/:id', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   });
+});
+
+// PUT /api/articles/upvote
+routes.put('/upvote', (req, res) => {
+  // make sure the session exists first
+  if (req.session) {
+    // pass session id along with all destructured properties on req.body
+    Articles.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+      .then(updatedVoteData => res.json(updatedVoteData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  }
 });
 
 routes.delete('/:id', (req, res) => {
