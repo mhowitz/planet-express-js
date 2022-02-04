@@ -66,8 +66,7 @@ Articles.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'articles',
-    timestamps: false,
+    modelName: 'articles'
 }
 );
 
