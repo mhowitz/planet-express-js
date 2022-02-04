@@ -19,7 +19,7 @@ routes.get('/', (req, res) => {
 });
 
 // get one article
-routes.get('/', (req, res) => {
+routes.get('/:id', (req, res) => {
   Articles.findOne({
     where: {
       id: req.params.id
@@ -32,12 +32,12 @@ routes.get('/', (req, res) => {
     });
 });
 
-// get one article
+// create one article
 routes.post('/', (req, res) => {
 
   Articles.create({
     title: req.body.title,
-    post_url: req.body.url,
+    post_url: req.body.post_url,
     user_id: req.body.user_id,
     category_id: req.body.category_id
   })
@@ -47,5 +47,50 @@ routes.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
+routes.put('/:id', (req, res) => {
+  Articles.update(
+    {
+      title: req.body.title
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+  .then(dbArticleData => {
+    if (!dbArticleData) {
+      res.status(404).json({ message: 'No article found with this id' });
+      return;
+    }
+    res.json(dbArticleData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+routes.delete('/:id', (req, res) => {
+  Articles.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbArticleData => {
+      if (!dbArticleData) {
+        res.status(404).json({ message: 'No article found with this id' });
+        return;
+      }
+      res.json(dbArticleData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 module.exports= routes;

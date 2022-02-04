@@ -17,7 +17,7 @@ const categoryData = [
     category_name: 'Express',
   },
   {
-      category_name: 'Node'
+    category_name: 'Node'
   }
 ];
 
