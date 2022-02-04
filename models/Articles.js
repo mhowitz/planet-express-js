@@ -2,28 +2,28 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Articles extends Model {
-    static upvote(body, models) {
-      return models.Vote.create({
-        user_id: body.user_id,
-        post_id: body.post_id
-      }).then(() => {
-        return Articles.findOne({
-          where: {
-            id: body.article_id
-          },
-          attributes: [
-            'id',
-            'article_url',
-            'title',
-            'created_at',
-            [
-              sequelize.literal('(SELECT COUNT(*) FROM vote WHERE article.id = vote.article_id)'),
-              'vote_count'
-            ]
-          ]
-        });
-      });
-    }
+    // static upvote(body, models) {
+    //   return models.Vote.create({
+    //     user_id: body.user_id,
+    //     post_id: body.post_id
+    //   }).then(() => {
+    //     return Articles.findOne({
+    //       where: {
+    //         id: body.article_id
+    //       },
+    //       attributes: [
+    //         'id',
+    //         'article_url',
+    //         'title',
+    //         'created_at',
+    //         [
+    //           sequelize.literal('(SELECT COUNT(*) FROM vote WHERE article.id = vote.article_id)'),
+    //           'vote_count'
+    //         ]
+    //       ]
+    //     });
+    //   });
+    // }
   }
 
 // class Articles extends Model {}
@@ -66,7 +66,8 @@ Articles.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'articles'
+    modelName: 'articles',
+    timestamps: false,
 }
 );
 
