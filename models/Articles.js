@@ -12,7 +12,7 @@ class Articles extends Model {
             id: body.article_id
           },
           attributes: [
-            'id',
+          'id',
             'article_url',
             'title',
             'created_at',
