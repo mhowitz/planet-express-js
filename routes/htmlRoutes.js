@@ -1,10 +1,17 @@
 const routes = require('express').Router();
-const { Router } = require('express');
-const req = require('express/lib/request');
-const htmlRoutes = require('./htmlRoutes.js');
+const { Articles, User, Comment } = require('../models');
+
 
 routes.get('/',(req, res) => {
   res.render('home');
-})
+});
+
+routes.get('/login', (req, res) => {
+  if(req.session.loggedIn) {
+      res.redirect('/');
+      return;
+  }
+  res.render('login');
+});
 
 module.exports = routes;
