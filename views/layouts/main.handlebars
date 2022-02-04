@@ -5,31 +5,52 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project?</title>
-  {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css"> --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+{{!--   
+  <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+  <link rel="stylesheet" href="/stylesheets/styles.css">
 </head>
 
 <body>
   <header>
-    <h1>Welcome to some kind of project!</h1>
-      <nav>
-    <a href="/">Home</a>
- 
-    {{#if loggedIn}}
-    <button id="logout" class="">Logout</button>
-    {{else}}
-       <a href="/login">Login</a>
-       <a href="/login">Sign Up!</a>
-    {{/if}}
-  </nav>
+
+    <nav class="navbar is-text-4 is-warning ">
+      <div class="navbar-start">
+        <h1 class="is-size-2">Planet Express.js</h1>
+
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable p-2">
+        <a href="" class="navbar-link">
+          Menu
+        </a>
+        <div class="navbar-dropdown">
+          {{#if loggedIn}}
+
+          <button id="logout" class="navbar-item">Logout</button>
+          <a href="/articles" class="navbar-item">Post an Article</a>
+          <a href="/articles" class="navbar-item">Dashboard</a>
+          
+          {{else}}
+          <a href="/" class="navbar-item">Home</a>
+          <a href="/login" class="navbar-item">Login</a>
+          <a href="/login" class="navbar-item">Sign Up!</a>
+
+
+          {{/if}}
+        </div>
+
+      </div>
+    </nav>
   </header>
 
   <main>
-      {{{body}}}
+    {{{body}}}
   </main>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+
   {{/if}}
+
 </body>
 
 </html>
