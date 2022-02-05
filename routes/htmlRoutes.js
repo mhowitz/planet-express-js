@@ -1,32 +1,32 @@
 const routes = require('express').Router();
+const urlMetadata = require('url-metadata');
 const { Articles, User, Comment } = require('../models');
 
 
-routes.get('/', (req, res) => {
+routes.get('/', async (req, res) => {
   console.log(req.session);
 
-  Articles.findAll({
+  const dbArticleData = await Articles.findAll({
     attributes: [
       'id',
       'title',
       'post_url'
     ]
-   })
-    .then(dbArticleData => {
-      const articles = dbArticleData.map(article => article.get({ plain: true }));
-      res.render('home', {
-        loggedIn: req.session.loggedIn,
-        articles
-      })
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+   });
+   
+  const articles = dbArticleData.map(article => article.get({ plain: true }));
+
+  await Promise.all(articles.map(async (url) => {
+    const title = await urlMetadata(url);
+    console.log(title);
+  }));
 
 
+  res.render('home', {
+    loggedIn: req.session.loggedIn,
+    articles
+  });
 
-  
 });
 
 routes.get('/login', (req, res) => {
