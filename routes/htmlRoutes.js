@@ -5,7 +5,6 @@ const {Articles} = require("../models");
 
 routes.get("/", async (req, res) => {
   var promises = [];
-  console.log(req.session);
 
   const dbArticleData = await Articles.findAll({
     attributes: ["id", "title", "post_url"],
@@ -17,9 +16,7 @@ routes.get("/", async (req, res) => {
     promises.push(urlMetadata(article.post_url).then(
       function (metadata) {
         // success handler
-        console.log(metadata.title);
         article.metadata = metadata.title;
-        console.log("22", article);
         return article;
       },
       function (error) {

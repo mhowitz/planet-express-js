@@ -8,7 +8,8 @@ routes.get('/', (req, res) => {
     attributes: [
       'id',
       'title',
-      'post_url'
+      'post_url',
+      'user_id'
     ]
    })
     .then(dbArticleData => res.json(dbArticleData))
