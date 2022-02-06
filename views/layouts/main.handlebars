@@ -5,49 +5,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project?</title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-{{!--   
-  <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="/stylesheets/styles.css">
+  {{!--
+  <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+
 </head>
 
 <body>
-  <header>
-
-    <nav class="navbar is-text-4 is-warning ">
-      <div class="navbar-start">
-        <h1 class="is-size-2">Planet Express.js</h1>
-
-      </div>
-      <div class="navbar-item has-dropdown is-hoverable p-2">
-        <a href="" class="navbar-link">
-          Menu
-        </a>
-        <div class="navbar-dropdown">
-          {{#if loggedIn}}
-
-          <button id="logout" class="navbar-item">Logout</button>
-          <a href="/articles" class="navbar-item">Post an Article</a>
-          <a href="/articles" class="navbar-item">Dashboard</a>
-          
-          {{else}}
-          <a href="/" class="navbar-item">Home</a>
-          <a href="/login" class="navbar-item">Login</a>
-          <a href="/login" class="navbar-item">Sign Up!</a>
-
-
-          {{/if}}
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head ">
+    <nav class="navbar" id="navBar">
+      <div class="container is-transparent">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="/images/planet-logo.png" alt="Logo">
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar">
+            {{#if loggedIn}}
+            <button id="logout" class="navbar-item">Logout</button>
+            <a href="/dashboard" class="navbar-item">Post an Article</a>
+            <a href="/articles" class="navbar-item">Dashboard</a>
+            {{else}}
+            <a href="/" class="navbar-item">Home</a>
+            <a href="/login" class="navbar-item">Login</a>
+            <a href="/login" class="navbar-item">Sign Up!</a>
+            {{/if}}
 
+          </div>
+        </div>
       </div>
     </nav>
-  </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered ">
+      <p class="title has-text-white">
+        Planet Express.js
+      </p>
+      <p class="subtitle has-text-white">
+        Fun things
+      </p>
+    </div>
+  </div>
+  </section>
+
 
   <main>
     {{{body}}}
   </main>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
+  </script>
 
   {{/if}}
 

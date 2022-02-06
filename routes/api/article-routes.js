@@ -38,7 +38,7 @@ routes.post('/', (req, res) => {
   Articles.create({
     title: req.body.title,
     post_url: req.body.post_url,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
     category_id: req.body.category_id
   })
     .then(dbArticleData => res.json(dbArticleData))

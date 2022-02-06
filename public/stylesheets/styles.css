@@ -2,3 +2,21 @@
     border: none;
     background: none;
 }
+.hero-head, .hero-body {
+    background-image: url('/images/pexels-felix-mittermeier-956999.jpg');
+    padding: 20px 35px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    top: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
+    z-index: 9999;
+}
+
+nav {
+    background: none;
+}
