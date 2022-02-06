@@ -1,6 +1,7 @@
 
 const routes = require("express").Router();
 const urlMetadata = require("url-metadata");
+const {Articles} = require("../models");
 
 routes.get("/", async (req, res) => {
   var promises = [];
