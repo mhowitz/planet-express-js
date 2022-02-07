@@ -1,47 +1,50 @@
-<card class="tile is-vertical column is-6">
-  <article class="title">
-    <div class="title">
-      <a href="{{post_url}}" target="_blank">{{title}}</a>
+<card class="tile is-6 is-parent">
+  
+  <card class="tile is-vertical column  box is-child">
+    <article class="title">
+      <div class="title">
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+      </div>
+    </article>
+    <div class="subtitle">
+      <div class="meta p-1">
+        {{metadata}}
+      </div>
+      <div class="p-1">
+        <h4>user inserted description of what the resource does well etc</h4>
+      </div>
     </div>
-  </article>
-  <div class="subtitle">
-    <div class="meta p-1">
-      {{metadata}}
-    </div>
-    <div class="p-1">
-      <h4>user inserted description of what the resource does well etc</h4>
-    </div>
-  </div>
-  <footer>
+    <footer class="tile">
 
-    {{!-- comment bar --}}
-    <div class="field">
-      <p class="control has-icons-left has-icons-right">
-        <input class="input" type="comment" placeholder="Comment">
-        <span class="icon is-small is-left">
-          <i class="far fa-comment"></i>
+      {{!-- comment bar --}}
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-rounded" type="comment" placeholder="Comment">
+          <span class="icon is-small is-left">
+            <i class="far fa-comment"></i>
+          </span>
+        </p>
+      </div>  
+
+      {{!-- Post Comment Button --}}
+      <button class="button is-success m-1" id="postCommentBtn">Post</button>
+      
+      {{! icons }}
+      <div class="m-1 pt-1" id="likeBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-thumbs-up"></i>
         </span>
-      </p>
-    </div>  
-    
-    <button class="button is-success m-1" id="postCommentBtn">Send</button>
-    
-    {{! icons }}
-    <div class="m-1 pt-1" id="likeBtn">
-      <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
-        <i class="far fa-thumbs-up"></i>
-      </span>
-      <p>666</p>
-    </div>
-    <div class="m-1 pt-1" id="commentBtn">
-      <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
-        <i class="far fa-comments"></i>
-      </span>
-      <p>666</p>
-    </div>
-  </footer>
+        <p>666</p>
+      </div>
+      <div class="m-1 pt-1" id="commentBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-comments"></i>
+        </span>
+        <p>666</p>
+      </div>
+    </footer>
+  </card>
 </card>
-
 {{!-- post_url is var if we want to show url--}}
 
 {{!-- {{user.username}} on {{created_at}} --}}

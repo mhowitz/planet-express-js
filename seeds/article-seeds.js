@@ -13,6 +13,12 @@ const articleData = [
     post_url: 'https://coolors.co/',
     user_id: 4,
     category_id: 2
+  },
+  {
+    title: 'Font Awesome Icons',
+    post_url: 'https://fontawesome.com/v5.15/icons?d=gallery&p=2',
+    user_id: 5,
+    category_id: 1
   }
 ];
 
