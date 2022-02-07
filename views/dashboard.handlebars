@@ -1,4 +1,5 @@
-<div class="field">
+<form>
+  <div class="field">
   <label class="label">Title</label>
   <div class="control">
     <input class="input" type="text" placeholder="Text input" id="articleTitle">
@@ -16,13 +17,13 @@
   <label class="label">Category</label>
   <div class="control">
     <div class="select">
-      <select id="catNo">
-        <option class="catNo" data-cat='1'>HTML</option>
-        <option class="catNo" data-cat='2'>css</option>
-        <option class="catNo" data-cat='3'>JavaScript</option>
-        <option class="catNo" data-cat='4'>MYSQL</option>
-        <option class="catNo" data-cat='5'>Express</option>
-        <option class="catNo" data-cat='6'>Node</option>
+      <select name ="category" id="catNo">
+        <option data='1'>HTML</option>
+        <option data='2'>css</option>
+        <option data='3'>JavaScript</option>
+        <option data='4'>MYSQL</option>
+        <option data='5'>Express</option>
+        <option data='6'>Node</option>
       </select>
     </div>
   </div>
@@ -36,4 +37,5 @@
     <button class="button is-link is-light">Cancel</button>
   </div>
 </div>
+</form>
 <script src="/javascript/post.js"></script>

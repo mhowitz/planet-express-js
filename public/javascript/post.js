@@ -1,16 +1,11 @@
 async function articlePost(event) {
     event.preventDefault();
-
     const title = document.querySelector('input[id="articleTitle"]').value.trim();
     const post_url = document.querySelector('input[id="articleUrl"]').value.trim();
-    const catId = document.querySelector('.catNo');
-
-
-    const category_id = catId.dataset.cat;
-
-    console.log(catId);
-   // console.log(post_url);
-    console.log("Data: " , title, post_url, category_id)
+    let cat_id = document.querySelector('#catNo').value;
+console.log(cat_id);
+    const category_id = cat_id === 'HTML' ? 1 : cat_id === 'css' ? 2 : cat_id === 'JavaScript'? 3 : cat_id === 'MYSQL' ? 4 : cat_id === 'Express' ? 5 : 6;
+    
     const res = await fetch('/api/articles', {
         method: 'POST',
         body: JSON.stringify({
@@ -25,7 +20,6 @@ async function articlePost(event) {
 
     if(res.ok){
         document.location.replace('/dashboard');
-        console.log('hello')
     }else {
         alert(res.statusText)
     }
