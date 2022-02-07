@@ -8,6 +8,7 @@ routes.get("/", async (req, res) => {
 
   const dbArticleData = await Articles.findAll({
     attributes: ["id", "title", "post_url"],
+    order: [["created_at", "DESC"]]
   });
 
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
@@ -16,6 +17,7 @@ routes.get("/", async (req, res) => {
     promises.push(urlMetadata(article.post_url).then(
       function (metadata) {
         // success handler
+        console.log(metadata);
         article.metadata = metadata.title;
         return article;
       },
@@ -27,6 +29,7 @@ routes.get("/", async (req, res) => {
   ))
   
   Promise.all(promises).then((data) => {
+
     res.render("home", {
       loggedIn: req.session.loggedIn,
       articles: data
