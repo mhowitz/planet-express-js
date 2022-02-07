@@ -16,7 +16,7 @@ async function loginButton(event) {
             headers: { 'Content-Type': 'application/json'}
         });
         if(res.ok) {
-            document.location.replace('/');
+            document.location.replace('/home');
             alert("logged in ! ")
         } else {
             alert(res.statusText)
@@ -46,7 +46,7 @@ async function signUpForm(event){
         });
 
         if(res.ok){
-            document.location.replace('/');
+            document.location.replace('/home');
         }else {
             alert(res.statusText);
         }
