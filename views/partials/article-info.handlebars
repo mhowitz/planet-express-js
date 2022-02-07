@@ -1,15 +1,38 @@
-<article class="article card">
-  <div class="title card-header">
-    <a href="{{post_url}}" target="_blank">{{title}}</a>
-    <span>({{post_url}})</span>
+<article class="article card m-5 p-1">
+  <div class="card-content">
+    <div class="title">
+      <a href="{{post_url}}" target="_blank">{{title}}</a>
+    </div>
+    <div class="p-1"> 
+      <h4>({{post_url}})</h4>
+    </div>
+    <div class="meta p-1"> 
+      {{metadata}}
+    </div>
+    <p class="p-1">short user description?</p>
+    <footer class="card-footer p-2 m-2">
+      <input class="input" type="comment" placeholder="Comment" id="comment" name="comment"autocomplete="comment">
+      <button class="button is-success m-1">Send</button>
+      
+      <span class="icon fa-lg">
+        <i class="far fa-thumbs-up"></i>
+        {{!-- <button class="button is-link is-outlined m-1">Like Icon</button>  --}}
+      </span>
+      <span class="icon fa-lg">
+        <i class="far fa-comments"></i>
+        {{!-- <button class="button is-link is-outlined m-1">Like Icon</button>  --}}
+      </span>
+      <p> # of likes & comments. when comments clicked new page or drop down</p>
+    </footer>
   </div>
-  <div class="meta card-content">
-    {{metadata}}
+  {{!-- {{#if loggedIn}}
+    logged in buddy  
+  {{/if}} --}}
 
     
     {{!-- {{user.username}} on {{created_at}} --}}
     {{!-- | --}}
     {{!-- <a href="/post/{{id}}">{{comments.length}} {{"comment" comments.length}}</a> --}}
-  </div>
+  
 </article>
 
