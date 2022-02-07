@@ -1,11 +1,10 @@
 const routes = require("express").Router();
 const urlMetadata = require("url-metadata");
 const { Articles, User, Comment, Category } = require("../models");
+const withAuth = require('../utils/auth');
 
-routes.get("/", async (req, res) => {
+routes.get("/", withAuth, async (req, res) => {
   var promises = [];
-  console.log(req.session);
-  console.log(req.session.user_id);
 
   const dbArticleData = await Articles.findAll({
     where: { user_id: req.session.user_id },
@@ -13,11 +12,7 @@ routes.get("/", async (req, res) => {
     order: [["created_at", "DESC"]]
   });
 
-  console.log(dbArticleData);
-
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
-
-  console.log(articles);
 
   articles.forEach((article) =>
     promises.push(
@@ -36,7 +31,6 @@ routes.get("/", async (req, res) => {
   );
 
   Promise.all(promises).then((data) => {
-    console.log("data", data);
     res.render("profile", {
       loggedIn: req.session.loggedIn,
       articles: data,
