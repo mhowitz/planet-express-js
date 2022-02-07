@@ -25,9 +25,16 @@ routes.get("/:option?/:option2?", async (req, res) => {
   let filter;
 
   if(req.params.option === "category"){
+    //sets filter automatically based on above category array
     filter = {category_id : categories.find(x => x.lang.toLowerCase() === req.params.option2.toLowerCase()).id}
   } else if (req.params.option === "user"){
-    filter = {user_id : req.session.user_id};
+    //if there is a number after /user
+    if(Number.isInteger(parseInt(req.params.option2))){
+      filter = {user_id : req.params.option2};
+    } else {
+      filter = {user_id : req.session.user_id}
+    }
+    
   } else {
     filter = {};
   }
