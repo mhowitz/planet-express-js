@@ -13,7 +13,7 @@ routes.get('/', (req, res) => {
 
 // with auth goes after the '/',
 routes.post('/', (req, res) => {
-  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
+  // expects => {comment_text: "This is the comment", user_id: 1, article_id: 2}
   Comment.create({
     comment_text: req.body.comment_text,
     // req.session uses the users id from their session the

@@ -5,7 +5,7 @@ class Articles extends Model {
     static upvote(body, models) {
       return models.Vote.create({
         user_id: body.user_id,
-        post_id: body.post_id
+        article_id: body.article_id
       }).then(() => {
         return Articles.findOne({
           where: {
