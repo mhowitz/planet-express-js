@@ -26,18 +26,7 @@ const articleData = [
     user_id: 5,
     category_id: 2
   },
-  {
-    title: 'Bulma',
-    post_url: 'https://bulma.io/',
-    user_id: 5,
-    category_id: 2
-  },
-  {
-    title: 'Bulma',
-    post_url: 'https://bulma.io/',
-    user_id: 5,
-    category_id: 2
-  }
+
 ];
 
 const seedArticles = () => Articles.bulkCreate(articleData, {individualHooks: true});
