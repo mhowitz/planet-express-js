@@ -1,15 +1,65 @@
-<article class="article card">
-  <div class="title card-header">
-    <a href="{{post_url}}" target="_blank">{{title}}</a>
-    <span>({{post_url}})</span>
-  </div>
-  <div class="meta card-content">
-    {{metadata}}
+<card class="tile is-6 is-parent">
+  
+  <card class="tile is-vertical column  box is-child">
+    <article class="title">
+      <div>
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+      </div>
+    </article>
+    <div class="subtitle is-6">
+      <div class="meta p-1">
+        {{metadata}}
+      </div>
+      <div class="p-1">
+        <h4>user inserted description of what the resource does well etc</h4>
+      </div>
+      {{!-- display user name when post created --}}
+      <div class="p-1">
+        <h4>{{user_id}}</h4>
+      </div>
+      
+    </div>
+    {{!-- {{#if loggedIn}} --}}
+    <footer class="tile container">
 
-    
-    {{!-- {{user.username}} on {{created_at}} --}}
-    {{!-- | --}}
-    {{!-- <a href="/post/{{id}}">{{comments.length}} {{"comment" comments.length}}</a> --}}
-  </div>
-</article>
+      {{!-- comment bar --}}
+      <div class="field">
+        <p class="control has-icons-left has-icons-right m-1">
+          <input class="input is-rounded" type="comment" placeholder="Comment">
+          <span class="icon is-small is-left">
+            <i class="far fa-comment"></i>
+          </span>
+        </p>
+      </div>  
+
+      {{!-- Post Comment Button --}}
+      <button class="button is-success m-1" id="postCommentBtn">Post</button>
+      
+      {{! icons }}
+      <div class="m-1 ml-3" id="likeBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-thumbs-up"></i>
+        </span>
+        <p>666</p>
+      </div>
+      <div class="m-1" id="commentBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-comments"></i>
+        </span>
+        <p>666</p>
+      </div>
+      <div class="m-1" id="saveBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-save"></i>
+        </span>
+      </div>
+    </footer>
+    {{!-- {{/if}} --}}
+  </card>
+</card>
+{{!-- post_url is var if we want to show url--}}
+
+{{!-- {{user.username}} on {{created_at}} --}}
+{{! | }}
+{{!-- <a href="/post/{{id}}">{{comments.length}} {{"comment" comments.length}}</a> --}}
 
