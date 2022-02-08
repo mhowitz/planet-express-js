@@ -9,7 +9,7 @@ class Articles extends Model {
       }).then(() => {
         return Articles.findOne({
           where: {
-            id: body.post_id
+            id: body.article_id
           },
           attributes: [
             'id',
@@ -17,8 +17,8 @@ class Articles extends Model {
             'title',
             'created_at',
             [
-              sequelize.literal('(SELECT COUNT(*) FROM vote WHERE article.id = vote.post_id)'),
-              'user_count'
+              sequelize.literal('(SELECT COUNT(*) FROM vote WHERE article.id = vote.article_id)'),
+              'vote_count'
             ]
           ]
         });
