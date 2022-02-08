@@ -1,4 +1,6 @@
+const session = require('express-session');
 const { Model, DataTypes } = require('sequelize');
+const { User } = require('./User');
 const sequelize = require('../config/connection');
 
 class Articles extends Model {
@@ -15,13 +17,18 @@ class Articles extends Model {
           },
           attributes: [
             'id',
-            'article_url',
+            'post_url',
             'title',
             'created_at',
             [
               sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
               'vote_count'
             ]
+          ], include: [
+          {
+            model: User,
+            attributes: ['id', 'username']
+          }
           ]
         });
       });

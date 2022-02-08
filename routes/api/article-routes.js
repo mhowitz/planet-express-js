@@ -1,5 +1,5 @@
 const {Articles, Comment, User, Vote }= require('../../models');
-
+const sequelize = require('../../config/connection')
 const routes = require('express').Router();
 
 // get all articles
@@ -9,8 +9,16 @@ routes.get('/', (req, res) => {
       'id',
       'title',
       'post_url',
-      'user_id'
+      'user_id',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
+      'vote_count'
     ]
+    ], include: [
+      {
+        model: User, 
+        attributes: ['id', 'username']
+      }]
+    
    })
     .then(dbArticleData => res.json(dbArticleData))
     .catch(err => {
@@ -24,7 +32,21 @@ routes.get('/:id', (req, res) => {
   Articles.findOne({
     where: {
       id: req.params.id
-    }
+    },
+    attributes: [
+      'id',
+      'post_url',
+      'title',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
+      'vote_count'
+    ]
+    ], include: [
+      {
+        model: User, 
+        attributes: ['id', 'username']
+      }
+    ]
    })
     .then(dbArticleData => res.json(dbArticleData))
     .catch(err => {
