@@ -10,7 +10,9 @@ routes.get('/', (req, res) => {
       'title',
       'post_url',
       'user_id',
-      'category_id'
+      'category_id',
+      'vote_count',
+      'username'
     ]
    })
     .then(dbArticleData => res.json(dbArticleData))

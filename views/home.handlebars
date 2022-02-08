@@ -1,5 +1,5 @@
-<article class="tile is-ancestor m-2 p-2 is-flex-wrap-wrap">
+<article class="tile is-ancestor m-2 p-2 is-flex-wrap-wrap" id="article_section">
     {{#each articles as |article|}}
-        {{> article-info article}}
+        {{> article-info article data=article.article_id}}
     {{/each}}
 </article>
