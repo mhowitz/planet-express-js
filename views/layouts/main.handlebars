@@ -23,8 +23,8 @@
     <nav class="navbar" id="navBar">
       <div class="container is-transparent">
         <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="/images/planet-logo.png" alt="Logo" class="icon is-large">
+          <a href= "/" class="navbar-item">
+            <img src="/images/planet-logo.png" alt="Logo" class="icon is-medium">
           </a>
           <span class="navbar-burger" data-target="navbarMenuHeroA">
             <span></span>
@@ -63,7 +63,7 @@
   </div>
   </section>
 
-
+{{> filter }}
   <main>
     {{{body}}}
   </main>
@@ -73,6 +73,7 @@
   
 
   {{/if}}
+  <script src="/javascript/filter.js"></script>
   <script src="/javascript/icon.js"></script>
 </body>
 
