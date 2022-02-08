@@ -27,11 +27,11 @@ Vote.belongsTo(User, {
 });
 
 Vote.belongsTo(Articles, {
-    foreignKey: 'article_id'
+    foreignKey: 'post_id'
 });
 
 Articles.hasMany(Vote, {
-    foreignKey: 'article_id'
+    foreignKey: 'post_id'
 });
 
 Comment.belongsTo(User, {

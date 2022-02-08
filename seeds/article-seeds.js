@@ -19,6 +19,24 @@ const articleData = [
     post_url: 'https://fontawesome.com/v5.15/icons?d=gallery&p=2',
     user_id: 5,
     category_id: 1
+  },
+  {
+    title: 'Bulma',
+    post_url: 'https://bulma.io/',
+    user_id: 5,
+    category_id: 2
+  },
+  {
+    title: 'Bulma',
+    post_url: 'https://bulma.io/',
+    user_id: 5,
+    category_id: 2
+  },
+  {
+    title: 'Bulma',
+    post_url: 'https://bulma.io/',
+    user_id: 5,
+    category_id: 2
   }
 ];
 
