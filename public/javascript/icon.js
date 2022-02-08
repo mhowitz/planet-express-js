@@ -1,6 +1,4 @@
-const like = document.getElementById("likeBtn");
-const comment = document.getElementById("commentBtn");
-const postComment = document.getElementById("postCommentBtn")
+
 
 async function likeButton(event) { 
   event.preventDefault();
@@ -27,6 +25,10 @@ async function postCommentButton(event) {
   // user can see all previous comments on article on a new page.
 }
 
-postComment.addEventListener("click", postCommentButton);
-like.addEventListener("click", likeButton);
-comment.addEventListener("click", commentButton);
+function blah (){
+  console.log($(this));
+};
+
+// when user clicks like button run function
+$(".likeBtn").click(blah);
+
