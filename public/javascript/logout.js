@@ -5,7 +5,7 @@ const logout = async () => {
         headers: { 'Content-Type': 'application/json' }
     });
     if(res.ok) {
-        document.location.replace('/');
+        document.location.replace('/home');
         console.log('Logged out');
         alert('logged out!')
     } else {
