@@ -1,5 +1,7 @@
+const session = require('express-session');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 
 class Articles extends Model {
 
@@ -8,30 +10,26 @@ class Articles extends Model {
         user_id: body.user_id,
         article_id: body.article_id
       }).then(() => {
-        console.log('Hello 333333')
         return Articles.findOne({
           where: {
             id: body.article_id
           },
           attributes: [
             'id',
-            'article_url',
+            'post_url',
             'title',
             'created_at',
             [
               sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
               'vote_count'
-            ],
-          ],
-          include: [
-            {
-              model: models.Comment,
-              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-              include: {
-                model: models.User,
-                attributes: ['username']
-              }
-            }
+
+            ]
+          ], include: [
+          {
+            model: models.User,
+            attributes: ['id', 'username']
+          }
+
           ]
         });
       });

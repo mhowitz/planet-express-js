@@ -26,6 +26,10 @@ Vote.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+User.hasMany(Vote, {
+    foreignKey: 'user_id'
+})
+
 Vote.belongsTo(Articles, {
     foreignKey: 'article_id'
 });
@@ -35,7 +39,7 @@ Articles.hasMany(Vote, {
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'article_id'
+    foreignKey: 'user_id'
 });
 
 Comment.belongsTo(Articles, {
@@ -49,5 +53,19 @@ User.hasMany(Comment, {
 Articles.hasMany(Comment, {
     foreignKey: 'article_id'
 });
+
+User.belongsToMany(Articles, {
+    through: Vote,
+    as: 'voted_articles',
+    foreignKey: 'user_id',
+    // onDelete: 'SET NULL'
+  });
+  
+ Articles.belongsToMany(User, {
+    through: Vote,
+    as: 'articles_voted',
+    foreignKey: 'article_id',
+    // onDelete: 'SET NULL'
+  });
 
 module.exports = { User, Category, Articles, Comment, Vote };
