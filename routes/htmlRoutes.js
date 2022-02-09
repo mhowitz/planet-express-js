@@ -32,6 +32,10 @@ routes.get ("/", async (req, res) => {
 
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
 
+  articles.forEach(article => {
+    article.loggedIn = req.session.loggedIn
+  });
+
   articles.forEach((article) =>
     promises.push(urlMetadata(article.post_url).then(
       function (metadata) {
@@ -48,7 +52,6 @@ routes.get ("/", async (req, res) => {
   
   Promise.all(promises).then((data) => {
     res.render("home", {
-      loggedIn: req.session.loggedIn,
       articles: data
     });
   });
@@ -85,6 +88,10 @@ console.log(req.params)
   });
 
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
+
+  articles.forEach(article => {
+    article.loggedIn = req.session.loggedIn
+  });
 
   articles.forEach((article) =>
     promises.push(urlMetadata(article.post_url).then(
