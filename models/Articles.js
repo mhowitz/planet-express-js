@@ -1,7 +1,7 @@
 const session = require('express-session');
 const { Model, DataTypes } = require('sequelize');
-const { User } = require('./User');
 const sequelize = require('../config/connection');
+
 
 class Articles extends Model {
 
@@ -10,7 +10,6 @@ class Articles extends Model {
         user_id: body.user_id,
         article_id: body.article_id
       }).then(() => {
-        console.log('Hello 333333')
         return Articles.findOne({
           where: {
             id: body.article_id
@@ -26,7 +25,7 @@ class Articles extends Model {
             ]
           ], include: [
           {
-            model: User,
+            model: models.User,
             attributes: ['id', 'username']
           }
           ]
