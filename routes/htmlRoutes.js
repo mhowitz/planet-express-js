@@ -52,6 +52,7 @@ routes.get ("/", async (req, res) => {
   
   Promise.all(promises).then((data) => {
     res.render("home", {
+      loggedIn: req.session.loggedIn,
       articles: data
     });
   });
