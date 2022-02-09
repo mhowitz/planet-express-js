@@ -15,7 +15,7 @@
       </div>
       {{!-- display user name when post created --}}
       <div class="p-1">
-        <h4>{{user_id}}</h4>
+        <h4>Added by {{user.username}}</h4>
       </div>
       
     </div>
@@ -40,13 +40,13 @@
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-thumbs-up"></i>
         </span>
-        <p>666 {{vote_count}}</p>
+        <p>{{vote_count}}</p>
       </div>
       <div class="m-1 commentBtn" id="commentBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-comments"></i>
         </span>
-        <p>666</p>
+        <p>{{comment_num}}</p>
       </div>
       <div class="m-1 saveBtn" id="saveBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
