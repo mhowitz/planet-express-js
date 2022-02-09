@@ -22,12 +22,14 @@ class Articles extends Model {
             [
               sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
               'vote_count'
+
             ]
           ], include: [
           {
             model: models.User,
             attributes: ['id', 'username']
           }
+
           ]
         });
       });

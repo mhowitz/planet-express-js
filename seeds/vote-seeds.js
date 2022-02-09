@@ -1,8 +1,11 @@
+
 const { Vote } = require('../models');
+
 
 const votedata = [
   {
     user_id: 9,
+
     article_id:1
 
   },

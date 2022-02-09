@@ -1,5 +1,10 @@
+const invalidPost = document.querySelector('.invalidPost');
+const articleSuccess = document.querySelector('.articleSuccess');
 async function articlePost(event) {
     event.preventDefault();
+    invalidPost.classList.add('is-invisible');
+    articleSuccess.classList.add('is-invisible');
+    const frm = document.querySelector('.formPost');
     const title = document.querySelector('input[id="articleTitle"]').value.trim();
     const post_url = document.querySelector('input[id="articleUrl"]').value.trim();
     let cat_id = document.querySelector('#catNo').value;
@@ -19,8 +24,12 @@ async function articlePost(event) {
     });
 
     if(res.ok){
-        document.location.replace('/dashboard');
+        // document.location.replace('profile');
+        articleSuccess.classList.remove('is-invisible');
+        frm.reset();
+       
     }else {
+        invalidPost.classList.remove('is-invisible')
         alert(res.statusText)
     }
 

@@ -1,6 +1,8 @@
 //login form
+const loginFail = document.querySelector('.invalidLogin');
 
 async function loginButton(event) { 
+    loginFail.classList.add('is-invisible')
     event.preventDefault();
 
     const email = document.querySelector("#emailLog").value.trim();
@@ -16,18 +18,23 @@ async function loginButton(event) {
             headers: { 'Content-Type': 'application/json'}
         });
         if(res.ok) {
-            document.location.replace('/');
-            alert("logged in ! ")
+            document.location.replace('/dashboard');
+            // alert("logged in ! ")
         } else {
-            alert(res.statusText)
+            // alert(res.statusText)
+
+            loginFail.classList.remove('is-invisible')
         }
        
     } else {
-        console.log("not working")
+        console.log("not working");
+        loginFail.classList.remove('is-invisible')
     }
 };
 
+const signUpFail = document.querySelector('.signUpFail');
 async function signUpForm(event){
+    signUpFail.classList.add('is-invisble')
     event.preventDefault();
 
     const username = document.querySelector("#userSU").value.trim();
@@ -46,10 +53,13 @@ async function signUpForm(event){
         });
 
         if(res.ok){
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         }else {
-            alert(res.statusText);
+            signUpFail.classList.remove('is-invisible')
+            // alert(res.statusText);
         }
+    } else {
+        signUpFail.classList.remove('is-invisible')
     }
 }
 
