@@ -2,7 +2,8 @@
 const routes = require("express").Router();
 const req = require("express/lib/request");
 const urlMetadata = require("url-metadata");
-const {Articles} = require("../models");
+const {Articles, User, Comment} = require("../models");
+const sequelize = require('../config/connection')
 
 const categories = [
   {"lang": "HTML", "id": 1},
@@ -14,6 +15,7 @@ const categories = [
 ]
 
 routes.get("/login", (req, res) => {
+  console.log(req.session.loggedIn);
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
@@ -26,11 +28,30 @@ routes.get ("/", async (req, res) => {
   var promises = [];
 
   const dbArticleData = await Articles.findAll({
-    attributes: ["id", "title", "post_url"],
-    order: [["created_at", "DESC"]]
+    attributes: [
+      'id',
+      'title',
+      'post_url',
+      'user_id',
+      'category_id',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
+      'vote_count']],
+    order: [["created_at", "DESC"]],
+    include: [
+      {
+        model: User, 
+        attributes: ['id', 'username']
+      },
+      {
+        model: Comment
+      }
+    ]
   });
 
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
+
+  articles.forEach((article) => article.loggedIn = req.session.loggedIn);
+  console.log(articles);
 
   articles.forEach((article) =>
     promises.push(urlMetadata(article.post_url).then(
@@ -48,7 +69,6 @@ routes.get ("/", async (req, res) => {
   
   Promise.all(promises).then((data) => {
     res.render("home", {
-      loggedIn: req.session.loggedIn,
       articles: data
     });
   });
@@ -80,7 +100,14 @@ console.log(req.params)
 
   const dbArticleData = await Articles.findAll({
     where: filter,
-    attributes: ["id", "title", "post_url"],
+    attributes: [
+      'id',
+      'title',
+      'post_url',
+      'user_id',
+      'category_id',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
+      'vote_count']],
     order: [["created_at", "DESC"]]
   });
 

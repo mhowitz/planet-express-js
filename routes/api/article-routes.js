@@ -13,7 +13,6 @@ routes.get('/', (req, res) => {
       'category_id',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
       'vote_count'
-
     ]
     ], include: [
       {
