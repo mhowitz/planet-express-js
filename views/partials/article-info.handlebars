@@ -38,9 +38,13 @@
       {{! icons }}
       <div class="m-1 ml-3 likeBtn" id="likeBtn" data-article_num={{id}}>
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
-          <i class="far fa-thumbs-up"></i>
+          {{#if userVoted}}
+          <i data-icon_num={{id}} class="fas fa-thumbs-up"></i>
+          {{else}}
+          <i data-icon_num={{id}} class="far fa-thumbs-up"></i>
+          {{/if}}
         </span>
-        <p>{{vote_count}}</p>
+        <p data-like_num={{id}}>{{vote_count}}</p>
       </div>
       <div class="m-1 commentBtn" id="commentBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">

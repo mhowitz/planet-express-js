@@ -1,55 +1,55 @@
-
-
-async function likeButton(event) { 
+async function likeButton(event) {
   event.preventDefault();
 
   let currentArticle = $(this)[0].dataset.article_num;
 
-  const res = await fetch('/api/articles/upvote', {
-    method: 'PUT',
+  const res = await fetch("/api/articles/upvote", {
+    method: "PUT",
     body: JSON.stringify({
-        article_id: currentArticle
+      article_id: currentArticle,
     }),
     headers: {
-        'Content-Type': 'application/json'
-    }
-  }); 
+      "Content-Type": "application/json",
+    },
+  });
 
-  if(res.ok){
-      // document.location.replace('profile');
-      // articleSuccess.classList.remove('is-invisible');
-      // frm.reset();
-      console.log("i think it upvoted");
-      likeNumEl = document.querySelector('div[data-article_num="' + currentArticle + '"]').children;
-      console.log(likeNumEl);
-      likeNumEl[1].outerText = likeNumEl[1].outerText++;
-      // window.location.href = ("/");
+  if (res.ok) {
+    likeNumEl = document.querySelector(
+      'p[data-like_num="' + currentArticle + '"]'
+    );
+    likeNumEl.innerHTML = parseInt(likeNumEl.innerHTML) + 1;
 
+    iconEl = document.querySelector(
+      'svg[data-icon_num="' + currentArticle + '"]'
+    );
+
+    iconEl.classList.remove("far");
+    iconEl.classList.add("fas");
     
-  }else {
-      // invalidPost.classList.remove('is-invisible')
-      alert("you already have voted on this");
+  } else {
+    // invalidPost.classList.remove('is-invisible')
+    alert("you already have voted on this");
   }
 
   // console.log('like button info',$(this));
   // need to add like to article model? and user cannot like again
 }
 
-async function commentButton(event) { 
+async function commentButton(event) {
   event.preventDefault();
-  console.log('comment button info',$(this));
+  console.log("comment button info", $(this));
 
   // user can see all previous comments on article on a new page.
 }
 
-async function postCommentButton(event) { 
+async function postCommentButton(event) {
   event.preventDefault();
-  console.log('post button info',$(this));
+  console.log("post button info", $(this));
 }
 
-async function saveButton(event) { 
+async function saveButton(event) {
   event.preventDefault();
-  console.log('save button info',$(this));
+  console.log("save button info", $(this));
 }
 
 // when user clicks like button run function
