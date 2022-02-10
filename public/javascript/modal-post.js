@@ -1,64 +1,56 @@
+
 const btn = document.getElementById('articleModal');
 const modal = document.getElementById('article-modal');
-const close = document.getElementsByClassName('modal-close');
+const close = document.querySelector('.modal-close');
+
+const invalidPost = document.querySelector('.invalidPost');
+const articleSuccess = document.querySelector('.articleSuccess');
 btn.onclick = function() {
   modal.style.display="flex";
 };
 close.onclick = function() {
-  modal.style.display="none"
+ modal.style.display="none"
 };
 window.onclick = function(e) {
-  console.log(e);
-}
+  if(e.target.className ==='modal-background') {
+    modal.style.display='none'
+  } 
+};
 
+async function articlePost(event) {
+    event.preventDefault();
+    invalidPost.classList.add('is-invisible');
+    articleSuccess.classList.add('is-invisible');
+    const frm = document.querySelector('.formPost');
+    const title = document.querySelector('input[id="articleTitle"]').value.trim();
+    const post_url = document.querySelector('input[id="articleUrl"]').value.trim();
+    let cat_id = document.querySelector('#catNo').value;
+    console.log(cat_id);
+    const category_id = cat_id === 'HTML' ? 1 : cat_id === 'css' ? 2 : cat_id === 'JavaScript'? 3 : cat_id === 'MYSQL' ? 4 : cat_id === 'Express' ? 5 : 6;
+    
+    const res = await fetch('/api/articles', {
+        method: 'POST',
+        body: JSON.stringify({
+            title,
+            post_url,
+            category_id
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
 
+    if(res.ok){
+        document.location.replace('/');
+        articleSuccess.classList.remove('is-invisible');
+        frm.reset();
+        console.log('it worked!!!! posted')
+       
+    }else {
+        invalidPost.classList.remove('is-invisible')
+        alert(res.statusText)
+    }
 
+};
 
-
-// const articleBtn = document.querySelector('#articleModal')
-// document.addEventListener(articleBtn, () => {
-//   console.log('button clicked')
-//     // Functions to open and close a modal
-//     function openModal($el) {
-//       $el.classList.add('is-active');
-//     }
-  
-//     function closeModal($el) {
-//       $el.classList.remove('is-active');
-//     }
-  
-//     function closeAllModals() {
-//       (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-//         closeModal($modal);
-//       });
-//     }
-  
-//     // Add a click event on buttons to open a specific modal
-//     (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-//       const modal = $trigger.dataset.target;
-//       const $target = document.getElementById(modal);
-//       console.log($target);
-  
-//       $trigger.addEventListener('click', () => {
-//         openModal($target);
-//       });
-//     });
-  
-//     // Add a click event on various child elements to close the parent modal
-//     (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-//       const $target = $close.closest('.modal');
-  
-//       $close.addEventListener('click', () => {
-//         closeModal($target);
-//       });
-//     });
-  
-//     // Add a keyboard event to close all modals
-//     document.addEventListener('keydown', (event) => {
-//       const e = event || window.event;
-  
-//       if (e.keyCode === 27) { // Escape key
-//         closeAllModals();
-//       }
-//     });
-//   });
+document.querySelector('#articleBtn').addEventListener('click', articlePost);
