@@ -2,7 +2,36 @@
 
 async function likeButton(event) { 
   event.preventDefault();
-  console.log('like button info',$(this));
+
+  let currentArticle = $(this)[0].dataset.article_num;
+
+  const res = await fetch('/api/articles/upvote', {
+    method: 'PUT',
+    body: JSON.stringify({
+        article_id: currentArticle
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+  }); 
+
+  if(res.ok){
+      // document.location.replace('profile');
+      // articleSuccess.classList.remove('is-invisible');
+      // frm.reset();
+      console.log("i think it upvoted");
+      likeNumEl = document.querySelector('div[data-article_num="' + currentArticle + '"]').children;
+      console.log(likeNumEl);
+      likeNumEl[1].outerText = likeNumEl[1].outerText++;
+      // window.location.href = ("/");
+
+    
+  }else {
+      // invalidPost.classList.remove('is-invisible')
+      alert("you already have voted on this");
+  }
+
+  // console.log('like button info',$(this));
   // need to add like to article model? and user cannot like again
 }
 
