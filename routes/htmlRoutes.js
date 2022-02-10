@@ -3,16 +3,8 @@ const routes = require("express").Router();
 const req = require("express/lib/request");
 const urlMetadata = require("url-metadata");
 const {Articles, User, Comment} = require("../models");
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
 
-const categories = [
-  {"lang": "HTML",        "id": 1},
-  {"lang": "CSS",         "id": 2},
-  {"lang": "Javascript",  "id": 3},
-  {"lang": "MySQL",       "id": 4},
-  {"lang": "express",     "id": 5},
-  {"lang": "node",        "id": 6}
-]
 
 routes.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -88,7 +80,7 @@ console.log(req.params)
     //sets filter automatically based on above category array
     // filter = {category_id : categories.find(x => x.lang.toLowerCase() === req.params.option2.toLowerCase()).id}
     console.log(categoriesParams)
-    filter = {category_id: categoriesParams.map(category => categories.find(x => x.lang.toLowerCase() === category.toLowerCase()).id)}
+    filter = {category_id: categoriesParams.map(category => globalCategoriesArray.find(x => x.lang.toLowerCase() === category.toLowerCase()).id)}
     console.log(filter)
   } else if (req.params.option === "user"){
     //if there is a number after /user

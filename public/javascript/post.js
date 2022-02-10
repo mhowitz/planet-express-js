@@ -9,7 +9,8 @@ async function articlePost(event) {
     const post_url = document.querySelector('input[id="articleUrl"]').value.trim();
     let cat_id = document.querySelector('#catNo').value;
     console.log(cat_id);
-    const category_id = cat_id === 'HTML' ? 1 : cat_id === 'css' ? 2 : cat_id === 'JavaScript'? 3 : cat_id === 'MYSQL' ? 4 : cat_id === 'Express' ? 5 : 6;
+    // const category_id = cat_id === 'HTML' ? 1 : cat_id === 'css' ? 2 : cat_id === 'JavaScript'? 3 : cat_id === 'MYSQL' ? 4 : cat_id === 'Express' ? 5 : 6;
+    const category_id = globalCategoriesArray.find((cat) => cat.lang.toLowerCase() === cat_id.toLowerCase()).id;
     
     const res = await fetch('/api/articles', {
         method: 'POST',
