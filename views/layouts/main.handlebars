@@ -38,9 +38,6 @@
               {{#if loggedIn}}
               <a id="logout" class="navbar-item">Logout</a>
               <a class="navbar-item js-modal-trigger" id="articleModal">Post an Article</a>
-
-
-
               <a href="/profile" class="navbar-item">Profile</a>
               {{else}}
               <a href="/login" class="navbar-item">Login/Sign up</a>
@@ -106,14 +103,14 @@
               </div>
             </div>
           </div>
-          <p class="invalidPost is-invisible has-text-warning">Invalid Post, make sure that the url is in
+          <p class="invalidModal is-invisible has-text-warning">Invalid Post, make sure that the url is in
             'http://www.website.com' format</p>
           <div class="field is-grouped">
             <div class="control">
               <button class="button is-link" id="articleBtn">Submit</button>
             </div>
           </div>
-          <p class="is-invisible has-text-success articleSuccess">Sucessfully Posted!</p>
+          <p class="is-invisible has-text-success successModal">Sucessfully Posted!</p>
         </form>
         <button class="modal-close is-large" aria-label="close"></button>
       </div>

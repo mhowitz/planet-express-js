@@ -1,10 +1,9 @@
-
 const btn = document.getElementById('articleModal');
 const modal = document.getElementById('article-modal');
 const close = document.querySelector('.modal-close');
 
-const invalidPost = document.querySelector('.invalidPost');
-const articleSuccess = document.querySelector('.articleSuccess');
+let invalidModal = document.querySelector('.invalidModal');
+let successModal = document.querySelector('.successModal');
 btn.onclick = function() {
   modal.style.display="flex";
 };
@@ -19,8 +18,8 @@ window.onclick = function(e) {
 
 async function articlePost(event) {
     event.preventDefault();
-    invalidPost.classList.add('is-invisible');
-    articleSuccess.classList.add('is-invisible');
+    invalidModal.classList.add('is-invisible');
+    successModal.classList.add('is-invisible');
     const frm = document.querySelector('.formPost');
     const title = document.querySelector('input[id="articleTitle"]').value.trim();
     const post_url = document.querySelector('input[id="articleUrl"]').value.trim();
@@ -42,12 +41,12 @@ async function articlePost(event) {
 
     if(res.ok){
         document.location.replace('/');
-        articleSuccess.classList.remove('is-invisible');
+        successModal.classList.remove('is-invisible');
         frm.reset();
         console.log('it worked!!!! posted')
        
     }else {
-        invalidPost.classList.remove('is-invisible')
+        invalidModal.classList.remove('is-invisible')
         alert(res.statusText)
     }
 
