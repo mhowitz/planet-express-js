@@ -3,7 +3,7 @@ const { Articles, User, Comment, Category } = require('../models');
 
 routes.get('/', (req, res) => {
 
-    res.render('dashboard', { 
+    res.render('profile', { 
         Articles,
         loggedIn: true })
 })

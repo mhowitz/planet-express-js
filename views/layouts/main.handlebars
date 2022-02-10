@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Express.js</title>
-  <link rel="icon" type="image/png" href="public/images/SeekPng.com_rocket-png_2460790.png"/>
-  
+  <link rel="icon" type="image/png" href="public/images/SeekPng.com_rocket-png_2460790.png" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/styles.css">
   <script src="https://kit.fontawesome.com/2258c7fb5c.js" crossorigin="anonymous"></script>
@@ -18,78 +18,113 @@
 
 <body>
   <!-- Hero head: will stick at the top -->
-  <section class ="hero is-medium">
-  <div class="hero-head">
-    <nav class="navbar" id="navBar">
-      <div class="container is-transparent">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="/images/planet-logo.png" alt="Logo" class="icon is-large">
-          </a>
-          <span class="navbar-burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
-          <div class="navbar">
-            {{#if loggedIn}}
-            <button id="logout" class="navbar-item">Logout</button>
-            <a href="/dashboard" class="navbar-item js-modal-trigger">Post an Article</a>
-            <a href="/profile" class="navbar-item">Profile</a>
-            {{else}}
-            <a href="/login" class="navbar-item">Login/Sign up</a>
-            <a class="navbar-item">Post an Article</a>
-            {{/if}}
+  <section class="hero is-medium">
+    <div class="hero-head">
+      <nav class="navbar" id="navBar">
+        <div class="container is-transparent">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="/images/planet-logo.png" alt="Logo" class="icon is-large">
+            </a>
+            <span class="navbar-burger" data-target="navbarMenuHeroA">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar">
+              {{#if loggedIn}}
+              <a id="logout" class="navbar-item">Logout</a>
+              <a class="navbar-item js-modal-trigger" id="articleModal">Post an Article</a>
 
+
+              <a href="/profile" class="navbar-item">Profile</a>
+              {{else}}
+              <a href="/login" class="navbar-item">Login/Sign up</a>
+              <a class="navbar-item">Post an Article</a>
+              {{/if}}
+
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
-
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered ">
-      <p class="title has-text-white">
-        Planet Express.js
-      </p>
-      <p class="subtitle has-text-white">
-        The resource library for all your coding needs!
-      </p>
+      </nav>
     </div>
-  </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered ">
+        <p class="title has-text-white">
+          Planet Express.js
+        </p>
+        <p class="subtitle has-text-white">
+          The resource library for all your coding needs!
+        </p>
+      </div>
+    </div>
   </section>
 
-{{!-- {{> filter }} --}}
+  {{!-- {{> filter }} --}}
   <main>
     {{{body}}}
   </main>
+  <div id="article-modal" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+      <div class="box">
+        <form class="formPost">
+          <h1 class="text-large">Post An Article</h1>
+          <div class="field">
+            <label class="label">Article Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text input" id="articleTitle">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">URL</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Format: https://www.article.com" id="articleUrl">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Category</label>
+            <div class="control">
+              <div class="select">
+                <select name="category" id="catNo">
+                  <option data='1'>HTML</option>
+                  <option data='2'>css</option>
+                  <option data='3'>JavaScript</option>
+                  <option data='4'>MYSQL</option>
+                  <option data='5'>Express</option>
+                  <option data='6'>Node</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <p class="invalidPost is-invisible has-text-warning">Invalid Post, make sure that the url is in
+            'http://www.website.com' format</p>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" id="articleBtn">Submit</button>
+            </div>
+          </div>
+          <p class="is-invisible has-text-success articleSuccess">Sucessfully Posted!</p>
+        </form>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+    </div>
+
+  </div>
   {{#if loggedIn}}
   <script src="/javascript/modal-post.js"></script>
   <script src="/javascript/logout.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'></script>
-  
-
   {{/if}}
 
-  <div class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Post An Article</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <!-- Content ... -->
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Save changes</button>
-        <button class="button">Cancel</button>
-      </footer>
-    </div>
-  </div>
+
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

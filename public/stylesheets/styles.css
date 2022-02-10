@@ -1,7 +1,7 @@
-#logout {
+/* #logout {
     border: none;
     background: none;
-}
+} */
 .hero-head, .hero-body {
     background-image: url('/images/pexels-felix-mittermeier-956981.jpg');
     padding: 20px 35px;
@@ -14,10 +14,14 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: 80%;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 nav {
     background: none;
     color: #fff;
+}
+
+.modal {
+    z-index:9999;
 }
