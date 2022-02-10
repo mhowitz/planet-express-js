@@ -9,6 +9,9 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/2258c7fb5c.js" crossorigin="anonymous"></script>
   <script src=""></script>
   {{!--
@@ -36,11 +39,11 @@
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar">
               {{#if loggedIn}}
-              <a id="logout" class="navbar-item">Logout</a>
-              <a class="navbar-item js-modal-trigger" id="articleModal">Post an Article</a>
-              <a href="/profile" class="navbar-item">Profile</a>
+              <a id="logout" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Logout</a>
+              <a href="/profile" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Profile</a>
+                           <a class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold" id="articleModal">Post an Article</a>
               {{else}}
-              <a href="/login" class="navbar-item">Login/Sign up</a>
+              <a href="/login" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Login/Sign up</a>
               <a class="navbar-item">Post an Article</a>
               {{/if}}
 
@@ -53,10 +56,10 @@
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
       <div class="container has-text-centered ">
-        <p class="title has-text-white">
+        <p class="title has-text-white is-size-1">
           Planet Express.js
         </p>
-        <p class="subtitle has-text-white">
+        <p class="subtitle has-text-white is-size-4 is-uppercase">
           The resource library for all your coding needs!
         </p>
       </div>
@@ -73,7 +76,7 @@
     <div class="modal-content">
       <div class="box">
         <form class="formPost">
-          <h1 class="title">Post An Article</h1>
+          <h1 class="title is-size-4 has-text-white">Post An Article</h1>
           <div class="field">
             <label class="label">Article Title</label>
             <div class="control">
@@ -94,7 +97,7 @@
               <div class="select">
                 <select name="category" id="catNo">
                   <option data='1'>HTML</option>
-                  <option data='2'>css</option>
+                  <option data='2'>CSS</option>
                   <option data='3'>JavaScript</option>
                   <option data='4'>MYSQL</option>
                   <option data='5'>Express</option>
@@ -110,7 +113,7 @@
               <button class="button is-link" id="articleBtn">Submit</button>
             </div>
           </div>
-          <p class="is-invisible has-text-success successModal">Sucessfully Posted!</p>
+          <p class="is-invisible has-text-success successModal">Successfully Posted!</p>
         </form>
         <button class="modal-close is-large" aria-label="close"></button>
       </div>
