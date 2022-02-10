@@ -1,7 +1,15 @@
 <card class="tile is-6 is-parent">
   
-  <card class="tile is-vertical column  box is-child tile article">
+  <card class="tile is-vertical column  box is-child">
     <article class="title">
+      {{category_id}}
+      {{#if "category_id === 1"}}
+      yes
+      {{/if}}
+      <span>
+        <i class="fa-brands fa-js-square p-1"></i>
+      </span>
+      {{!-- {{/if}} --}}
       <div>
         <a href="{{post_url}}" target="_blank">{{title}}</a>
       </div>
@@ -10,12 +18,9 @@
       <div class="meta p-1">
         {{metadata}}
       </div>
-      <div class="p-1">
-        <h4>user inserted description of what the resource does well etc</h4>
-      </div>
       {{!-- display user name when post created --}}
       <div class="p-1">
-        <h4>Added by {{user.username}}</h4>
+        <h4>Added by: {{user.username}}</h4>
       </div>
       
     </div>
