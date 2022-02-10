@@ -26,3 +26,22 @@ nav {
 .modal {
     z-index:9999;
 }
+ .filter {
+     background-color: #406E8E ;
+ }
+
+ .button {
+     background-color: #FFCF9C;
+ }
+
+ .title {
+     color: #406E8E;
+ }
+
+ .article {
+     background-color: #0D3B66;
+ }
+
+ .article-body {
+     background-color: #406E8E;
+ }

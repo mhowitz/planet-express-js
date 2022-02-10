@@ -1,6 +1,6 @@
 <card class="tile is-6 is-parent">
   
-  <card class="tile is-vertical column  box is-child">
+  <card class="tile is-vertical column  box is-child tile article">
     <article class="title">
       <div>
         <a href="{{post_url}}" target="_blank">{{title}}</a>
@@ -33,7 +33,7 @@
       </div>  
 
       {{!-- Post Comment Button --}}
-      <button class="button is-success m-1 postCommentBtn" id="postCommentBtn">Post</button>
+      <button class="button m-1 postCommentBtn" id="postCommentBtn">Post</button>
       
       {{! icons }}
       <div class="m-1 ml-3 likeBtn" id="likeBtn" data-article_num={{id}}>
