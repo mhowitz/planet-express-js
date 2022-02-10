@@ -80,7 +80,7 @@ routes.put('/upvote', (req, res) => {
   if (req.session) {
     // pass session id along with all destructured properties on req.body
     
-    Articles.upvote({ ...req.body, user_id: req.body.user_id }, { Vote, Comment, User })
+    Articles.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
       .then(updatedVoteData => res.json({ message: "HEllo", updatedVoteData }))
       .catch(err => {
         console.log(err);

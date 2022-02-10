@@ -2,7 +2,7 @@
 const routes = require("express").Router();
 const req = require("express/lib/request");
 const urlMetadata = require("url-metadata");
-const {Articles, User, Comment} = require("../models");
+const {Articles, User, Comment, Vote} = require("../models");
 const sequelize = require('../config/connection')
 
 const categories = [
@@ -49,11 +49,18 @@ routes.get ("/", async (req, res) => {
     order: [["created_at", "DESC"]]
   });
 
+  const dbVoteData = await Vote.findAll({})
+
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
 
   articles.forEach(article => {
     article.loggedIn = req.session.loggedIn
     article.comment_num = article.comments.length
+    dbVoteData.forEach((vote) => {
+      if((vote.dataValues.user_id === req.session.user_id) && (vote.dataValues.article_id === article.id)){
+        article.userVoted = true;
+      }
+    })
   });
 
   articles.forEach((article) =>
@@ -126,14 +133,19 @@ console.log(req.params)
     order: [["created_at", "DESC"]]
   });
 
+  const dbVoteData = await Vote.findAll({})
+
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
 
   articles.forEach(article => {
     article.loggedIn = req.session.loggedIn
     article.comment_num = article.comments.length
+    dbVoteData.forEach((vote) => {
+      if((vote.dataValues.user_id === req.session.user_id) && (vote.dataValues.article_id === article.id)){
+        article.userVoted = true;
+      }
+    })
   });
-
-  console.log(articles);
 
   articles.forEach((article) =>
     promises.push(urlMetadata(article.post_url).then(
