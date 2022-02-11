@@ -1,12 +1,25 @@
 <div class="tile is-parent is-6">
   <card class="tile is-child box article-body">
     <article class="title">
-      {{category_id}}
-      {{#if "category_id === 1"}}
-      yes
-      {{/if}}
-      <span>
-        <i class="fa-brands fa-js-square p-1"></i>
+      <span class="icon is-large">
+        {{#if isHTML}}
+        <i class="fas fa-code p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isCSS}}
+        <i class="fas fa-palette p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isJS}}
+        <i class="fab fa-js-square p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isSQL}}
+        <i class="fa-solid fa-database p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isExpress}}
+        <i class="fas fa-shipping-fast p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isNode}}
+        <i class="fab fa-node p-1"></i>
+        {{/if}}
       </span>
       {{!-- {{/if}} --}}
       <div>
