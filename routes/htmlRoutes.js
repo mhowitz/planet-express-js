@@ -54,6 +54,13 @@ routes.get ("/", async (req, res) => {
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
 
   articles.forEach(article => {
+    article.isHTML = false;
+    article.isCSS = false;
+    article.isJS = false;
+    article.isSQL = false;
+    article.isExpress = false;
+    article.isNode = false;
+
     article.loggedIn = req.session.loggedIn
     article.comment_num = article.comments.length
     dbVoteData.forEach((vote) => {
@@ -61,6 +68,19 @@ routes.get ("/", async (req, res) => {
         article.userVoted = true;
       }
     })
+    if(article.category_id === 1){
+      article.isHTML = true;
+    } else if (article.category_id === 2){
+      article.isCSS = true;
+    } else if (article.category_id === 3){
+      article.isJS = true;
+    } else if (article.category_id === 4){
+      article.isSQL = true;
+    } else if (article.category_id === 5){
+      article.isExpress = true;
+    } else if (article.category_id === 6){
+      article.isNode = true;
+    }
   });
 
   articles.sort(function(a,b){return b.vote_count - a.vote_count})
@@ -141,6 +161,13 @@ console.log(req.params)
   let articles = dbArticleData.map((article) => article.get({ plain: true }));
 
   articles.forEach(article => {
+    article.isHTML = false;
+    article.isCSS = false;
+    article.isJS = false;
+    article.isSQL = false;
+    article.isExpress = false;
+    article.isNode = false;
+
     article.loggedIn = req.session.loggedIn
     article.comment_num = article.comments.length
     dbVoteData.forEach((vote) => {
@@ -148,6 +175,19 @@ console.log(req.params)
         article.userVoted = true;
       }
     })
+    if(article.category_id === 1){
+      article.isHTML = true;
+    } else if (article.category_id === 2){
+      article.isCSS = true;
+    } else if (article.category_id === 3){
+      article.isJS = true;
+    } else if (article.category_id === 4){
+      article.isSQL = true;
+    } else if (article.category_id === 5){
+      article.isExpress = true;
+    } else if (article.category_id === 6){
+      article.isNode = true;
+    }
   });
 
   articles.sort(function(a,b){return b.vote_count - a.vote_count})
