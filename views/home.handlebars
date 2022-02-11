@@ -1,8 +1,10 @@
 <article class="tile is-ancestor m-2 is-flex-wrap-wrap" id="article_section">
     {{> filter }}
-    <div class="tile is-parent is-9 is-flex-wrap-wrap is-align-content-space-between">
-        {{#each articles as |article|}}
-            {{> article-info article data=article.article_id}}
-        {{/each}}
+    <div class="tile is-flex-wrap-wrap flex-wrap
+">
+    {{#each articles as |article|}}
+        {{> article-info article data=article.article_id}}
+    {{/each}}
     </div>
+
 </article>
