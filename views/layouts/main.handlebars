@@ -23,13 +23,13 @@
 <body>
   <!-- Hero head: will stick at the top -->
 
-  <section class="hero is-medium">
+  <hero class="hero is-medium">
     <div class="hero-head">
       <nav class="navbar" id="navBar">
         <div class="container is-transparent">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="/images/planet-logo.png" alt="Logo" class="icon is-large">
+              <img src="/images/planet-logo.png" alt="Logo" class="icon is-large logo p-0">
             </a>
             <span class="navbar-burger" data-target="navbarMenuHeroA">
               <span></span>
@@ -42,7 +42,7 @@
               {{#if loggedIn}}
               <a id="logout" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Logout</a>
               <a href="/profile" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Profile</a>
-                           <a class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold" id="articleModal">Post an Article</a>
+              <a class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold" id="articleModal">Post an Article</a>
               {{else}}
               <a href="/login" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Login/Sign up</a>
               <a class="navbar-item">Post an Article</a>
@@ -65,7 +65,7 @@
         </p>
       </div>
     </div>
-  </section>
+  </hero>
 
   {{!-- {{> filter }} --}}
   <main class="article">
