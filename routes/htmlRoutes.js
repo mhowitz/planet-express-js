@@ -63,6 +63,9 @@ routes.get ("/", async (req, res) => {
     })
   });
 
+  articles.sort(function(a,b){return b.vote_count - a.vote_count})
+  
+
   articles.forEach((article) =>
     promises.push(urlMetadata(article.post_url).then(
       function (metadata) {
@@ -146,6 +149,8 @@ console.log(req.params)
       }
     })
   });
+
+  articles.sort(function(a,b){return b.vote_count - a.vote_count})
 
   articles.forEach((article) =>
     promises.push(urlMetadata(article.post_url).then(
