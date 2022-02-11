@@ -36,6 +36,11 @@ User.init(
         len: [6],
       },
     },
+    saved_articles: {
+      type: DataTypes.INTEGER,
+      allowNull: true, 
+    },
+
   },
   {
     hooks: {
