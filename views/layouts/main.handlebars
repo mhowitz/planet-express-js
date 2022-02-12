@@ -22,11 +22,27 @@
 
 <body>
   <!-- Hero head: will stick at the top -->
+  
+  <nav class="navbar hero-head">
+    {{!-- logo --}}
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="/images/planet-logo.png" alt="Logo" class="icon is-large logo p-2">
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a href="" class="navbar-item">Profile</a>
+        <a href="" class="navbar-item">Sign in</a>
+        <a href="" class="navbar-item">Profile</a>
+      </div>
+    </div>
+  </nav>
 
   <hero class="hero is-medium">
-    <div class="hero-head">
       {{!-- logo nav bar --}}
-      <nav class="navbar">
+      {{!-- <nav class="navbar hero-head">
         <div class="container is-transparent">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -34,11 +50,9 @@
             </a>
           </div>
         </div>
-      </nav>
-    </div>
-    <div class="hero-head">
+      </nav> --}}
 
-      <nav class="navbar" id="navBar">
+      <nav class="navbar hero-head" id="navBar">
         <div class="container is-transparent">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -65,8 +79,6 @@
           </div>
         </div>
       </nav>
-    </div>
-
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
       <div class="container has-text-centered ">
