@@ -1,6 +1,6 @@
 <article class="tile is-ancestor is-flex-wrap-wrap" id="article_section">
     {{> filter }}
-    <div class="tile is-flex-wrap-wrap flex-wrap pt-6 pr-5 pl-1">
+    <div class="tile is-flex-wrap-wrap pt-6 pr-5 pl-1">
         {{#each articles as |article|}}
             {{> article-info article data=article.article_id}}
         {{/each}}
