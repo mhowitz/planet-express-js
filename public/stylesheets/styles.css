@@ -60,3 +60,9 @@ nav {
     min-width: 125px;
     min-height: 125px;
  }
+
+ .space-highlight:hover{
+     opacity: 0.2;
+     color: white;
+
+ }
