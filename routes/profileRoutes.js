@@ -53,6 +53,7 @@ routes.get('/categories/:id', withAuth, async (req, res) => {
           'id',
           'title',
           'post_url',
+          'category_id',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
           'vote_count']
         ],
@@ -75,7 +76,7 @@ routes.get('/categories/:id', withAuth, async (req, res) => {
 
   const dbVoteData = await Vote.findAll({})
 
-  console.log("category", category[0].articles);
+  console.log("category1111111111", category[0].articles);
 
   category[0].articles.forEach(article => {
     article.isHTML = false;
