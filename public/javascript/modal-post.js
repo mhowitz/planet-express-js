@@ -10,11 +10,11 @@ btn.onclick = function() {
 close.onclick = function() {
  modal.style.display="none"
 };
-window.onclick = function(e) {
-  if(e.target.className ==='modal-background') {
-    modal.style.display='none'
-  } 
-};
+// window.onclick = function(e) {
+//   if(e.target.className ==='modal-background') {
+//     modal.style.display='none'
+//   } 
+// };
 
 async function articlePost(event) {
     event.preventDefault();
