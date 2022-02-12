@@ -1,19 +1,7 @@
-<div class="tile is-ancestor">
-
-  <div class="tile is-parent is-8">
-    <div class="tile is-child box">
-          {{> filter }}
-    <article class="tile is-ancestor m-2 p-2 is-flex-wrap-wrap" id="article_section">
-      {{#each articles as |article|}}
-      {{> article-info article data=article.article_id}}
-      {{/each}}
-    </article>
-    </div>
-  </div>
 <div class="tile is-parent">
     <form class="tile is-child box formPost">
     <div class="field">
-      <label class="label">Title</label>
+      <label class="label">Article Title</label>
       <div class="control">
         <input class="input" type="text" placeholder="Text input" id="articleTitle">
       </div>

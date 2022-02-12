@@ -1,17 +1,34 @@
-<div class="tile is-ancestor">
 
-  <div class="tile is-parent is-8">
-    <div class="tile is-child box">
-          {{> filter }}
-    <article class="tile is-ancestor m-2 p-2 is-flex-wrap-wrap" id="article_section">
-  {{#each articles as |article|}}
-  {{> article-info article}}
-  {{/each}}
-    </article>
+<section class="section pt-5">
+  <div class="container">
+    <div class="has-text-centered">
+      <span class="title has-text-light">
+        Profile
+      </span>
+      <br>
+      <br>
+    </div>
+    <div class="tile is-ancestor">
+      <div class="tile is-8 is-flex-wrap-wrap ">
+
+        {{#each categories as |category|}}
+        {{> category-tiles}}
+        {{/each}}
+
+      </div>
+      <div class="tile is-4">
+        {{> post}}
+      </div>
     </div>
   </div>
-<div class="tile is-parent">
-    <form class="tile is-child box formPost">
+
+</section>
+
+
+
+
+{{!-- <div class="tile is-parent">
+  <form class="tile is-child box formPost">
     <div class="field">
       <label class="label">Title</label>
       <div class="control">
@@ -54,4 +71,4 @@
 
 
 
-  <script src="/javascript/post.js"></script>
+<script src="/javascript/post.js"></script> --}}
