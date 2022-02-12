@@ -85,3 +85,7 @@ nav {
 a:link {color: #B5B1B7;}  
 a:visited {color: whitesmoke}  
 a:hover {color: #6F6D72}  
+
+.tile {
+    border-radius: 0;
+}
