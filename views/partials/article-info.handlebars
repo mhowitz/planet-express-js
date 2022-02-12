@@ -32,16 +32,14 @@
       <div class="meta p-1">
         {{metadata}}
       </div>
-      <div class="p-1">
-        <h4>user inserted description of what the resource does well etc</h4>
-      </div>
+      
       {{!-- display user name when post created --}}
       <div class="p-1">
         <h4>Added by {{user.username}}</h4>
       </div>
     </div>
     {{#if loggedIn}}
-    <footer class="tile container">
+    <footer class="tile container is-flex">
 
       {{!-- comment bar --}}
       <div class="field">
@@ -55,9 +53,8 @@
 
       {{!-- Post Comment Button --}}
       <button class="button m-1 postCommentBtn" id="postCommentBtn">Post</button>
-      
       {{! icons }}
-      <div class="m-1 ml-3 likeBtn" id="likeBtn" data-article_num={{id}}>
+      <div class="m-1 ml-3 likeBtn " id="likeBtn" data-article_num={{id}}>
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           {{#if userVoted}}
           <i data-icon_num={{id}} class="fas fa-thumbs-up"></i>
@@ -67,13 +64,13 @@
         </span>
         <p data-like_num={{id}}>{{vote_count}}</p>
       </div>
-      <div class="m-1 commentBtn" id="commentBtn">
+      <div class="m-1 commentBtn " id="commentBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-comments"></i>
         </span>
         <p>{{comment_num}}</p>
       </div>
-      <div class="m-1 saveBtn" id="saveBtn">
+      <div class="m-1 saveBtn " id="saveBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-save"></i>
         </span>
