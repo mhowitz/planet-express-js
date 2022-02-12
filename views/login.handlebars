@@ -1,0 +1,98 @@
+<section class="tile is-ancestor mt-5">
+    <div class="tile is-parent  is-6">
+        <form class="tile is-child box">
+            <h2 class="is-size-3 p-2">Log In:</h2>
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="Email" id="emailLog" name="email"
+                        autocomplete="email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" placeholder="Password" id="passwordLog" name="password"
+                        autocomplete="current-password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button id="loginBtn" class="button is-success">
+                        Login
+                    </button>
+                </p>
+            </div>
+               <p class="invalidLogin is-invisible has-text-danger"> Invalid login, please try again.</p>
+        </form>
+    </div>
+
+    <div class="tile is-parent is-6">
+
+        <form class="signUpForm tile is-child box">
+            <h2 class="is-size-3 p-2">Sign Up:</h2>
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" id="userSU" autocomplete="username" placeholder="Username" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="Email" id="emailSU" autocomplete="email" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </p>
+
+            </div>
+            <div class="field">
+                <p class="control  has-icons-left">
+                    <input type="password" id="passSU" autocomplete="new-password" class="input"
+                        placeholder="Password" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button type="submit" class="button is-success">Sign Up</button>
+                </p>
+                
+            </div>
+            <p class="signUpFail has-text-danger is-invisible">Invalid input, please try again.</p>
+        </form>
+    </div>
+</section>
+
+{{!-- <div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+        <div class="box">
+            <p>Invalid Login! Try again</p>
+        </div>
+    </div>
+
+    <button class="modal-close is-large" aria-label="close"></button>
+</div> --}}
+
+
+
+<script src="/javascript/login.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
+</script>
