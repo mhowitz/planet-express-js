@@ -1,14 +1,29 @@
 <article class="tile is-ancestor is-flex-wrap-wrap" id="article_section">
     {{> filter }}
 
-    <div class="tile is-flex-wrap-wrap flex-wrap pt-6 pr-5 pl-1">
-        {{#if empty}}
-            <p class = "is-size-1 has-text-centered has-text-white" id="emptyCat">There are no articles with that category!</p>
-        {{else}}
-            {{#each articles as |article|}}
-                {{> article-info article data=article.article_id}}
-            {{/each}}
-        {{/if}}
+    <div class="tile is-flex-wrap-wrap pt-6 pr-5 pl-1">
+        {{#each articles as |article|}}
+            {{> article-info article data=article.article_id}}
+        {{/each}}
+        {{!-- need something here to tell to always post bottom left, not wrap, currently not working :( ) --}}
+        <div class="is-vertical">
+            <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+                <a class="pagination-previous is-disabled has-text-white" title="This is the first page">Previous</a>
+                <a class="pagination-next has-text-white">Next page</a>
+                <ul class="pagination-list">
+                    <li>
+                        {{!-- will need to use handles bars to connect with current page etc.. --}}
+                    <a class="pagination-link is-current has-text-white" aria-label="Page 1" aria-current="page">1</a>
+                    </li>
+                    <li>
+                    <a class="pagination-link has-text-white" aria-label="Goto page 2">2</a>
+                    </li>
+                    <li>
+                    <a class="pagination-link has-text-white" aria-label="Goto page 3">3</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-
+    
 </article>
