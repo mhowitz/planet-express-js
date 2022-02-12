@@ -100,10 +100,17 @@ routes.get ("/", async (req, res) => {
     )
   ))
   
+  empty = false;
+
+  if(articles.length === 0){
+    empty = true
+  }
+
   Promise.all(promises).then((data) => {
     res.render("home", {
       loggedIn: req.session.loggedIn,
-      articles: data
+      articles: data,
+      empty: empty
     });
   });
 });
@@ -206,10 +213,17 @@ console.log(req.params)
     )
   ))
   
+  empty = false;
+
+  if(articles.length === 0){
+    empty = true
+  }
+
   Promise.all(promises).then((data) => {
     res.render("home", {
       loggedIn: req.session.loggedIn,
-      articles: data
+      articles: data,
+      empty: empty
     });
   });
 
