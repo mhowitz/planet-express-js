@@ -35,11 +35,7 @@ User.init(
       validate: {
         len: [6],
       },
-    },
-    saved_articles: {
-      type: DataTypes.INTEGER,
-      allowNull: true, 
-    },
+    }
 
   },
   {
