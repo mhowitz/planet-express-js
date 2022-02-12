@@ -30,7 +30,7 @@ nav {
  }
 
  .button {
-     background-color: #FFCF9C;
+     background-color: #4A6D7C;
      font-family: 'Poppins', sans-serif;
  }
 
@@ -39,7 +39,7 @@ nav {
  }
 
  .article {
-     background-color: #0D3B66;
+     background-color: #0E1428;
  }
 
  /* .article-body {
@@ -55,6 +55,20 @@ nav {
     position:sticky;
     top:0;
  }
+
  #catTiles:hover {
      background-color: #b4d9f3 ;
  }
+
+
+ .logo{
+    min-width: 125px;
+    min-height: 125px;
+ }
+
+ .space-highlight:hover{
+     opacity: 0.2;
+     color: white;
+
+ }
+

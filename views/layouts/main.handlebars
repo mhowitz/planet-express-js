@@ -1,138 +1,182 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planet Express.js</title>
-  <link rel="icon" type="image/png" href="public/images/SeekPng.com_rocket-png_2460790.png" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Express.js</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/SeekPng.com_rocket-png_2460790.png"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="css/mystyles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/2258c7fb5c.js" crossorigin="anonymous"></script>
-  <script src=""></script>
-  {{!--
-  <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="css/mystyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2258c7fb5c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src=""></script>
+    {{!
+  <link rel="stylesheet" type="text/css" href="/css/jass.css"> }}
 
-</head>
+  </head>
 
-<body>
-  <!-- Hero head: will stick at the top -->
+  <body>
+    <!-- Hero head: will stick at the top -->
 
-  <section class="hero is-medium">
-    <div class="hero-head">
-      <nav class="navbar" id="navBar">
-        <div class="container is-transparent">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="/images/planet-logo.png" alt="Logo" class="icon is-large">
-            </a>
-            <span class="navbar-burger" data-target="navbarMenuHeroA">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar">
-              {{#if loggedIn}}
-              <a id="logout" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Logout</a>
-              <a href="/profile" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Profile</a>
-                           <a class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold" id="articleModal">Post an Article</a>
-              {{else}}
-              <a href="/login" class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold">Login/Sign up</a>
-              <a class="navbar-item">Post an Article</a>
-              {{/if}}
-
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-      <div class="container has-text-centered ">
-        <p class="title has-text-white is-size-1">
-          Planet Express.js
-        </p>
-        <p class="subtitle has-text-white is-size-4 is-uppercase">
-          The resource library for all your coding needs!
-        </p>
+    <nav class="navbar hero-head" id="navBar">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img
+            src="/images/planet-logo.png"
+            alt="Logo"
+            class="icon is-large logo p-0"
+          />
+        </a>
+        <span class="navbar-burger" data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </div>
-    </div>
-  </section>
+      <div id="navbarMenuHeroA" class="navbar-menu">
+        <div class="navbar-end">
+          {{#if loggedIn}}
+            <a
+              id="logout"
+              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            >Logout</a>
+            <a
+              href="/profile"
+              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            >Profile</a>
+            <a
+              class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+              id="articleModal"
+            >Post an Article</a>
+          {{else}}
+            <a
+              href="/login"
+              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            >Login/Sign up</a>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
+    <hero class="hero is-medium">
 
-  {{!-- {{> filter }} --}}
-  <main class="article">
-    {{{body}}}
-  </main>
-  <div id="article-modal" class="modal">
-    <div class="modal-background"></div>
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title has-text-white is-size-1">
+            Planet Express.js
+          </p>
+          <p class="subtitle has-text-white is-size-4 is-uppercase">
+            The resource library for all your coding needs!
+          </p>
+        </div>
+      </div>
+    </hero>
 
-    <div class="modal-content">
-      <div class="box">
-        <form class="formPost">
-          <h1 class="title is-size-4 has-text-white">Post An Article</h1>
-          <div class="field">
-            <label class="label">Article Title</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Text input" id="articleTitle">
-            </div>
-          </div>
+    {{!-- {{> filter }} --}}
+    <main class="article">
+      {{{body}}}
+    </main>
+    <div id="article-modal" class="modal">
+      <div class="modal-background"></div>
 
-          <div class="field">
-            <label class="label">URL</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Format: https://www.article.com" id="articleUrl">
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Category</label>
-            <div class="control">
-              <div class="select">
-                <select name="category" id="catNo">
-                  <option data='1'>HTML</option>
-                  <option data='2'>CSS</option>
-                  <option data='3'>JavaScript</option>
-                  <option data='4'>MYSQL</option>
-                  <option data='5'>Express</option>
-                  <option data='6'>Node</option>
-                </select>
+      <div class="modal-content">
+        <div class="box">
+          <form class="formPost">
+            <h1 class="title is-size-4 has-text-white">Post An Article</h1>
+            <div class="field">
+              <label class="label">Article Title</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Text input"
+                  id="articleTitle"
+                />
               </div>
             </div>
-          </div>
-          <p class="invalidModal is-invisible has-text-warning">Invalid Post, make sure that the url is in
-            'http://www.website.com' format</p>
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-link button" id="articleBtn">Submit</button>
+
+            <div class="field">
+              <label class="label">URL</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Format: https://www.article.com"
+                  id="articleUrl"
+                />
+              </div>
             </div>
-          </div>
-          <p class="is-invisible has-text-success successModal">Successfully Posted!</p>
-        </form>
-        <button class="modal-close is-large" aria-label="close"></button>
+
+            <div class="field">
+              <label class="label">Category</label>
+              <div class="control">
+                <div class="select">
+                  <select name="category" id="catNo">
+                    <option data="1">HTML</option>
+                    <option data="2">CSS</option>
+                    <option data="3">JavaScript</option>
+                    <option data="4">MYSQL</option>
+                    <option data="5">Express</option>
+                    <option data="6">Node</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <p class="invalidModal is-invisible has-text-warning">Invalid Post,
+              make sure that the url is in 'http://www.website.com' format</p>
+            <div class="field is-grouped">
+              <div class="control">
+                <button
+                  class="button is-link button"
+                  id="articleBtn"
+                >Submit</button>
+              </div>
+            </div>
+            <p class="is-invisible has-text-success successModal">Successfully
+              Posted!</p>
+          </form>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
       </div>
+
     </div>
 
-  </div>
-  {{#if loggedIn}}
-  <script src="/javascript/modal-post.js"></script>
-  <script src="/javascript/logout.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'></script>
-  {{/if}}
 
+    <footer class="p-5 container">
+      this is the footer
+      <div class="text-align-center">
+        Back to top
+      </div>
+    </footer>
 
+    {{#if loggedIn}}
+      <script src="/javascript/modal-post.js"></script>
+      <script src="/javascript/logout.js"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"
+      ></script>
+    {{/if}}
 
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-  <script src="/javascript/icon.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/javascript/filter.js"></script>
+    <script src="/javascript/icon.js"></script>
+  </body>
 
 </html>

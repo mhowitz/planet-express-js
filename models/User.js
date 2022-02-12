@@ -35,7 +35,8 @@ User.init(
       validate: {
         len: [6],
       },
-    },
+    }
+
   },
   {
     hooks: {
