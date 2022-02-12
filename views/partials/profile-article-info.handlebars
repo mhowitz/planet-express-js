@@ -1,0 +1,90 @@
+<card class="tile is-6 is-parent">
+  <card class="tile is-vertical column box is-child tile ">
+    <article class="title">
+
+
+      <span class="icon is-large">
+        {{#if isHTML}}
+        <i class="fas fa-code p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isCSS}}
+        <i class="fas fa-palette p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isJS}}
+        <i class="fab fa-js-square p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isSQL}}
+        <i class="fa-solid fa-database p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isExpress}}
+        <i class="fas fa-shipping-fast p-1 fa-lg"></i>
+        {{/if}}
+        {{#if isNode}}
+        <i class="fab fa-node p-1"></i>
+        {{/if}}
+      </span>
+
+      <div>
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+      </div>
+    </article>
+    <div class="subtitle is-6">
+      <div class="meta p-1">
+        {{metadata}}
+      </div>
+      <div class="p-1">
+        <h4>user inserted description of what the resource does well etc</h4>
+      </div>
+      {{!-- display user name when post created --}}
+      <div class="p-1">
+        <h4>Added by {{user.username}}</h4>
+      </div>
+    </div>
+    {{#if loggedIn}}
+    <footer class="tile container">
+
+      {{!-- comment bar --}}
+      <div class="field">
+        <p class="control has-icons-left has-icons-right m-1">
+          <input class="input is-rounded" type="comment" placeholder="Comment">
+          <span class="icon is-small is-left">
+            <i class="far fa-comment"></i>
+          </span>
+        </p>
+      </div>  
+
+      {{!-- Post Comment Button --}}
+      <button class="button m-1 postCommentBtn" id="postCommentBtn">Post</button>
+      
+      {{! icons }}
+      <div class="m-1 ml-3 likeBtn" id="likeBtn" data-article_num={{id}}>
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          {{#if userVoted}}
+          <i data-icon_num={{id}} class="fas fa-thumbs-up"></i>
+          {{else}}
+          <i data-icon_num={{id}} class="far fa-thumbs-up"></i>
+          {{/if}}
+        </span>
+        <p data-like_num={{id}}>{{vote_count}}</p>
+      </div>
+      <div class="m-1 commentBtn" id="commentBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-comments"></i>
+        </span>
+        <p>{{comment_num}}</p>
+      </div>
+      <div class="m-1 saveBtn" id="saveBtn">
+        <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
+          <i class="far fa-save"></i>
+        </span>
+      </div>
+    </footer>
+    {{/if}}
+  </card>
+</card>
+{{!-- post_url is var if we want to show url--}}
+
+{{!-- {{user.username}} on {{created_at}} --}}
+{{! | }}
+{{!-- <a href="/post/{{id}}">{{comments.length}} {{"comment" comments.length}}</a> --}}
+

@@ -13,8 +13,8 @@
         <br>
         <div class="tile is-ancestor ">
             <section class="tile is-8 is-flex-wrap-wrap">
-                {{#each category.articles as |article| }}
-                {{>article-info article }}
+                {{#each category as |article| }}
+                {{>profile-article-info article }}
                 {{/each}}
             </section>
             <div class="tile is-4">
