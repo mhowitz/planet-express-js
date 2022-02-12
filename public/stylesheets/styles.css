@@ -56,6 +56,11 @@ nav {
     top:0;
  }
 
+ #catTiles:hover {
+     background-color: #b4d9f3 ;
+ }
+
+
  .logo{
     min-width: 125px;
     min-height: 125px;
@@ -66,3 +71,4 @@ nav {
      color: white;
 
  }
+

@@ -1,5 +1,5 @@
-let invalidPost = document.querySelector('.invalidPost');
-let articleSuccess = document.querySelector('.articleSuccess');
+var invalidPost = document.querySelector('.invalidPost');
+var articleSuccess = document.querySelector('.articleSuccess');
 async function articlePost(event) {
     event.preventDefault();
     invalidPost.classList.add('is-invisible');
