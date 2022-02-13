@@ -1,3 +1,9 @@
+:root {
+    --primary-color: #0E1428;
+    --secondary-color: #36518a;
+    --tertiary-color: #b4d9f3;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -25,27 +31,51 @@ nav {
     z-index:9999;
 }
  .filter {
-     background-color: #36518a ;
+     background-color: var(--primary-color) ;
  }
 
- .button {
-     background-color: #36518a;
+ /* .button {
+     background-color:var(--secondary-color);
      font-family: 'Poppins', sans-serif;
      color: #0f0e1c;
- }
+ } */
+
+ a.button2{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid var(--tertiary-color);
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:var(--tertiary-color);
+    text-align:center;
+    transition: all 0.15s;
+    }
+    a.button2:hover{
+    color:var(--secondary-color);
+    border-color:var(--tertiary-color);
+    }
+    a.button2:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    }
+    @media all and (max-width:30em){
+    a.button2{
+    display:block;
+margin:0.4em auto;}
+    }
 
  .title {
-     color: #36518a;
+     color: var(--secondary-color);
  }
 
  .article {
-     background-color:#192743;
+     background-color:var(--primary-color);
  }
 
-
- .article-body {
-     background-color: #708299;
- }
 
  li {
     list-style: none;
@@ -58,7 +88,7 @@ nav {
  }
 
  #catTiles:hover {
-     background-color: #b4d9f3 ;
+     background-color: var(--tertiary-color) ;
  }
 
 
@@ -75,17 +105,18 @@ nav {
 
 
  .filter {
-     background-color: #192743;
+     background-color: var(--primary-color);
+     color: white !important;
  }
 
 .footer {
-    background-color: #192743;
+    background-color: var(--primary-color);
 }
 
 
-a:link {color: #B5B1B7;}  
-a:visited {color: whitesmoke}  
-a:hover {color: #6F6D72}  
+a:link {color:var(--primary-color);}  
+a:visited {color: var(--secondary-color)}  
+a:hover {color: var(--tertiary-color)}  
 
 .tile {
     border-radius: 0;
