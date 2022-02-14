@@ -105,10 +105,19 @@ margin:0.4em auto;}
     background-color: transparent !important;
  }
 
+ .filter-align {
+     padding-left: 41;
+ }
+
 
  .filter {
      background-color: var(--primary-color);
      color: white !important;
+ }
+
+ .filter-flex-box {
+     display: flex !important ;
+     justify-content: center !important;
  }
 
 .footer {
