@@ -105,6 +105,10 @@ margin:0.4em auto;}
     background-color: transparent !important;
  }
 
+ .filter-align {
+     padding-left: 41;
+ }
+
 
  .filter {
      background-color: var(--primary-color);
