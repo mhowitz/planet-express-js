@@ -115,6 +115,11 @@ margin:0.4em auto;}
      color: white !important;
  }
 
+ .filter-flex-box {
+     display: flex !important ;
+     justify-content: center !important;
+ }
+
 .footer {
     background-color: var(--primary-color);}
 
