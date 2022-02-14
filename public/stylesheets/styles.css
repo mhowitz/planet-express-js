@@ -131,3 +131,10 @@ a:hover {color: var(--tertiary-color)}
 .tile {
     border-radius: 0;
 }
+
+@media screen and (max-width:768px) {
+    .mobile-spacing {
+        padding-left: 35px !important;
+    }
+}
+
