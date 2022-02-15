@@ -137,8 +137,9 @@ a:hover {color: var(--tertiary-color)}
     border-radius: 0;
 }
 
-
-
+.no-hover {
+    pointer-events: none;
+}
 
 /* mobile article padding */
 @media screen and (max-width:768px) {
