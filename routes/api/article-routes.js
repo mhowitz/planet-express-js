@@ -47,7 +47,16 @@ routes.get('/:id', (req, res) => {
       {
         model: User, 
         attributes: ['id', 'username']
+      }, 
+      {
+        model: Comment, 
+        attributes: ['id', 'comment_text', 'user_id', 'article_id', 'created_at'],
+        include: {
+          model: User, 
+          attributes: ['username']
+        }
       }
+
     ]
    })
     .then(dbArticleData => res.json(dbArticleData))

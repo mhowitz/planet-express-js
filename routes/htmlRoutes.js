@@ -1,6 +1,5 @@
 
 const routes = require("express").Router();
-const req = require("express/lib/request");
 const urlMetadata = require("url-metadata");
 const {Articles, User, Comment, Vote} = require("../models");
 const sequelize = require('../config/connection')
@@ -229,6 +228,51 @@ console.log(req.params)
 
 
 });
+
+routes.get('/articles/:id', (req, res) => {
+  Articles.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'post_url',
+      'title',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.article_id)'),
+      'vote_count'
+
+    ]
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'article_id','user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  }).then(dbArticleData => {
+    if(!dbArticleData){
+      res.status(404).json({ message: 'no article found with this id' });
+      return;
+    }
+    const article = dbArticleData.get({ plain: true });
+    res.render('comments', {
+      article,
+      loggedIn: req.session.loggedIn
+    });
+  }).catch(err=> {
+    console.log(err);
+    res.status(500).json(err);
+  })
+})
 
 
 module.exports = routes;

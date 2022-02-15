@@ -44,18 +44,18 @@
     <footer class="tile container">
 
       {{!-- comment bar --}}
-      <div class="field">
-        <p class="control has-icons-left has-icons-right m-1">
-          <input class="input is-rounded" type="comment" placeholder="Comment">
-          <span class="icon is-small is-left">
-            <i class="far fa-comment"></i>
-          </span>
-        </p>
-      </div>  
-
-      {{!-- Post Comment Button --}}
-      <button class="button m-1 postCommentBtn" id="postCommentBtn">Post</button>
-      
+<form action="">
+          <div class="field">
+          <p class="control has-icons-left has-icons-right m-1">
+            <input class="input is-rounded" id="commentInput" data-comment-num={{id}} type="comment" placeholder="Comment">
+            <span class="icon is-small is-left">
+              <i class="far fa-comment"></i>
+            </span>
+          </p>
+            <button  class="button m-1 postCommentBtn" data-article_num={{id}}>Post</button>
+        </div>
+        
+</form>
       {{! icons }}
       <div class="m-1 ml-3 likeBtn" id="likeBtn" data-article_num={{id}}>
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
