@@ -37,8 +37,8 @@ routes.get('/', async (req, res) => {
 
   res.render("profile", {
     loggedIn: req.session.loggedIn,
-    categories
-    // username: req.session.username
+    categories,
+    username: req.session.username
   });
 });
 
