@@ -82,6 +82,19 @@ async function saveButton(event) {
   console.log("save button info", $(this));
 }
 
+// navbar hamburger functionality 
+$(document).ready(function() {
+
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+  });
+});
+
 // when user clicks like button run function
 $(".likeBtn").click(likeButton);
 $(".commentBtn").click(commentButton);

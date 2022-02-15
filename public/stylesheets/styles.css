@@ -132,9 +132,10 @@ a:hover {color: var(--tertiary-color)}
     border-radius: 0;
 }
 
+/* mobile article padding */
 @media screen and (max-width:768px) {
     .mobile-spacing {
-        padding-left: 35px !important;
+        padding-left: 30px !important;
     }
 }
 
