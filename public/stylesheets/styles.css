@@ -105,6 +105,10 @@ margin:0.4em auto;}
     background-color: transparent !important;
  }
 
+ .logo-hover:hover{
+     opacity: .1;
+ }
+
  .filter-align {
      padding-left: 41;
  }
@@ -121,7 +125,8 @@ margin:0.4em auto;}
  }
 
 .footer {
-    background-color: var(--primary-color);}
+    background-color: var(--primary-color);
+}
 
 
 a:link {color:var(--secondary-color);}  
@@ -139,3 +144,9 @@ a:hover {color: var(--tertiary-color)}
     }
 }
 
+/* hamburger bg color when */
+@media screen and (max-width:1023px) {
+    .bg-color {
+        background-color: var(--primary-color);
+    }
+}
