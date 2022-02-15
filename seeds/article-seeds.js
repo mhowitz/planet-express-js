@@ -32,6 +32,30 @@ const articleData = [
     user_id: 2,
     category_id: 1
   },
+  {
+    title: 'MYSQL cheatsheet',
+    post_url: 'https://www.mysqltutorial.org/mysql-cheat-sheet.aspx',
+    user_id: 2,
+    category_id: 4
+  },
+  {
+    title: 'sequelize models',
+    post_url: 'https://sequelize.org/v5/manual/models-definition.html',
+    user_id: 2,
+    category_id: 4
+  },
+  {
+    title: 'Node.appendChild()',
+    post_url: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild',
+    user_id:5,
+    category_id:6
+  },
+  {
+    title: 'Flexbox Froggy',
+    post_url: 'https://flexboxfroggy.com/',
+    user_id: 2,
+    category_id: 2
+  }
 ];
 
 const seedArticles = () => Articles.bulkCreate(articleData, {individualHooks: true});
