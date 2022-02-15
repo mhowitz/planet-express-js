@@ -36,22 +36,22 @@
   <body>
     <!-- Hero head: will stick at the top -->
 
-    <nav class="navbar hero-head" id="navBar">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+    <nav class="navbar hero-head is-justify-content-space-between" id="navBar">
+        <a class="" href="/">
           <img
             src="/images/planet-logo.png"
             alt="Logo"
             class="icon is-small logo p-0"
           />
         </a>
-        <span class="navbar-burger navbar-end" data-target="navbarMenuHeroA">
+      <div class="navbar-brand">
+        <span class="navbar-burger navbar-end sticky" data-target="navbarMenuHeroA">
           <span></span>
           <span></span>
           <span></span>
         </span>
       </div>
-      <div id="navbarMenuHeroA" class="navbar-menu">
+      <div id="navbarMenuHeroA" class="navbar-menu bg-color">
         <div class="navbar-end">
           {{#if loggedIn}}
             <a
