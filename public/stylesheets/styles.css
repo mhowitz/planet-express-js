@@ -137,6 +137,9 @@ a:hover {color: var(--tertiary-color)}
     border-radius: 0;
 }
 
+
+
+
 /* mobile article padding */
 @media screen and (max-width:768px) {
     .mobile-spacing {
@@ -148,5 +151,9 @@ a:hover {color: var(--tertiary-color)}
 @media screen and (max-width:1023px) {
     .bg-color {
         background-color: var(--primary-color);
+    }
+
+    .blue {
+        background-color: var(--secondary-color);
     }
 }
