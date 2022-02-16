@@ -19,7 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      {{!-- href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" --}}
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap";
       rel="stylesheet"
     />
     <script
@@ -35,22 +36,23 @@
   <body>
     <!-- Hero head: will stick at the top -->
 
-    <nav class="navbar hero-head" id="navBar">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+    <nav class="navbar hero-head is-justify-content-space-between" id="navBar">
+        <a class="" href="/">
           <img
             src="/images/planet-logo.png"
             alt="Logo"
-            class="icon is-large logo p-0"
+            class="icon is-small logo p-0"
           />
         </a>
-        <span class="navbar-burger" data-target="navbarMenuHeroA">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </div>
-      <div id="navbarMenuHeroA" class="navbar-menu">
+      <div class="">
+        <div class="mt-5">
+          <span class="navbar-burger navbar-end has-text-white has-text-weight-bold blue" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+      <div id="navbarMenuHeroA" class="navbar-menu blue">
         <div class="navbar-end">
           {{#if loggedIn}}
             <a
@@ -73,6 +75,7 @@
           {{/if}}
         </div>
       </div>
+      </div>
     </nav>
     <hero class="hero is-medium">
 
@@ -82,7 +85,7 @@
           <p class="title has-text-white is-size-1">
             Planet Express.js
           </p>
-          <p class="subtitle has-text-white is-size-4 is-uppercase">
+          <p class="subtitle has-text-white is-size-4 has-text-weight-bold is-uppercase">
             The resource library for all your coding needs!
           </p>
         </div>
@@ -99,7 +102,7 @@
       <div class="modal-content">
         <div class="box">
           <form class="formPost">
-            <h1 class="title is-size-4 has-text-white">Post An Article</h1>
+            <h1 class="title is-size-3 has-text-black has-text-centered">Post An Article</h1>
             <div class="field">
               <label class="label">Article Title</label>
               <div class="control">
@@ -144,7 +147,7 @@
             <div class="field is-grouped">
               <div class="control">
                 <button
-                  class="button is-link button"
+                  class="button blue button"
                   id="articleBtn"
                 >Submit</button>
               </div>
@@ -159,15 +162,15 @@
     </div>
     
     <footer class="footer">
-  <div class="content has-text-centered">
+  <div class="content has-text-centered has-text-white has-text-weight-bold">
     <p>
-      <strong>Planet Express.js</strong> created by
+      Planet Express.js created by
         <br>
-        <a href="https://github.com/mhowitz"target="_blank">Mikayla Howitz</a>,
+        <a href="https://github.com/mhowitz"target="_blank">Mikayla Howitz</a>
       <br>
-      <a href="https://github.com/davidtait1996"target="_blank">David Tait</a>,
+      <a href="https://github.com/davidtait1996"target="_blank">David Tait</a>
       <br>
-       <a href="https://github.com/JasonWisniewski"target="_blank">Jascon Wisniewski</a>
+       <a href="https://github.com/JasonWisniewski"target="_blank">Jason Wisniewski</a>
        <br>
       and <a href="https://github.com/sabrielg"target="_blank">Sabriel Gee</a>. 
       <br>
@@ -175,10 +178,16 @@
       <a href="http://opensource.org/licenses/mit-license.php"target="_blank">MIT</a>.
     </p>
   </div>
+  <div>
+    <a
+    href="https://apod.nasa.gov/apod/astropix.html" target="blank">
+    <img src="/images/kindpng_326793.png"> </a>
+  </div>
 </footer>
 
 
     {{#if loggedIn}}
+
       <script src="/javascript/modal-post.js"></script>
       <script src="/javascript/logout.js"></script>
       <script

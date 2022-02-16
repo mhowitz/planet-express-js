@@ -1,8 +1,28 @@
-<div onclick = "location.href='/profile/categories/{{id}}';" class="tile is-parent is-3 is-vertical" >
+<div onclick = "location.href='/profile/categories/{{id}}';" class="tile is-parent is-4 is-vertical no-hover">
     <div class="tile is-child box has-text-centered" id="catTiles">
-        <a href="profile/categories/{{id}}">
-        <header>{{category_name}}</header>
-        
+        <a class="" href="profile/categories/{{id}}">
+        <header class="is-size-3">{{category_name}}</header>
+        <br>
+        <span class="icon is-large">
+            {{#if isHTML}}
+            <i class="fas fa-code fa-5x"></i>
+            {{/if}}
+            {{#if isCSS}}
+            <i class="fas fa-palette fa-5x"></i>
+            {{/if}}
+            {{#if isJS}}
+            <i class="fab fa-js-square fa-5x"></i>
+            {{/if}}
+            {{#if isSQL}}
+            <i class="fas fa-database fa-5x"></i>
+            {{/if}}
+            {{#if isExpress}}
+            <i class="fas fa-shipping-fast fa-5x"></i>
+            {{/if}}
+            {{#if isNode}}
+            <i class="fab fa-node fa-5x"></i>
+            {{/if}}
+        </span>
         </a>
     </div>
 </div>

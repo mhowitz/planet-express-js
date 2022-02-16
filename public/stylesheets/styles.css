@@ -1,3 +1,10 @@
+:root {
+    /* --primary-color: #0E1428; */
+    --primary-color: #0f0e1c;
+    --secondary-color: #36518a;
+    --tertiary-color: #b4d9f3;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -19,33 +26,58 @@ body {
 nav {
     background: none;
     color: #fff;   
-     /* font-family:'Poppins', Helvetica, sans-serif; */
 }
 
 .modal {
     z-index:9999;
 }
  .filter {
-     background-color: #406E8E ;
+     background-color: var(--primary-color) ;
  }
 
  .button {
-     background-color: #4A6D7C;
+     background-color:var(--secondary-color);
      font-family: 'Poppins', sans-serif;
+     color: #fff;
  }
 
+.button2{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid var(--tertiary-color);
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none !important;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:var(--tertiary-color);
+    text-align:center;
+    transition: all 0.15s;
+    }
+.button2:hover{
+     color:var(--tertiary-color) !important;
+     border-color:var(--tertiary-color) !important;
+    }
+.button2:active{
+    color: var(--tertiary-color) !important;
+    border-color:var(--tertiary-color) !important;
+    }
+    @media all and (max-width:30em){
+.button2{
+    display:block;
+margin:0.4em auto;}
+    }
+
+
  .title {
-     color: #406E8E;
+     color: var(--secondary-color);
  }
 
  .article {
-     background-color: #0E1428;
+     background-color:var(--primary-color);
  }
 
-
- /* .article-body {
-     background-color: #406E8E;
- } */
 
  li {
     list-style: none;
@@ -58,18 +90,73 @@ nav {
  }
 
  #catTiles:hover {
-     background-color: #b4d9f3 ;
+     background-color: var(--tertiary-color) ;
  }
 
 
  .logo{
-    min-width: 125px;
-    min-height: 125px;
+    min-width: 110px;
+    min-height: 110px;
  }
 
  .space-highlight:hover{
-     opacity: 0.2;
-     color: white;
-
+    opacity: 0.65;
+    color: white !important;
+    background-color: transparent !important;
  }
 
+ .logo-hover:hover{
+     opacity: .1;
+ }
+
+ .filter-align {
+     padding-left: 41;
+ }
+
+
+ .filter {
+     background-color: var(--primary-color);
+     color: white !important;
+ }
+
+ .filter-flex-box {
+     display: flex !important ;
+     justify-content: center !important;
+ }
+
+.footer {
+    padding: 40px 10px 50px 30px;
+    background-color: var(--primary-color);
+}
+
+
+a:link {color:var(--secondary-color);}  
+a:visited {color: var(--secondary-color)}  
+a:hover {color: var(--tertiary-color)}  
+
+.tile {
+    border-radius: 0;
+}
+
+.no-hover :hover{
+    color: black;
+    /* pointer-events: none; */
+}
+
+/* mobile article padding */
+@media screen and (max-width:768px) {
+    .mobile-spacing {
+        padding-left: 30px !important;
+    }
+}
+
+/* hamburger bg color when */
+@media screen and (max-width:1023px) {
+    .bg-color {
+        background-color: var(--primary-color);
+    }
+
+    .blue {
+        background-color: var(--secondary-color);
+    }
+}
