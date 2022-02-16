@@ -125,6 +125,7 @@ margin:0.4em auto;}
  }
 
 .footer {
+    padding: 40px 10px 50px 30px;
     background-color: var(--primary-color);
 }
 
