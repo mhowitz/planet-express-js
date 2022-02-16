@@ -1,4 +1,7 @@
 
+let cmntModal = document.querySelector('#comment-modal');
+let cmntModalClose = document.querySelector('.comment-modal-close');
+let hero = document.querySelector('.hero')
 async function likeButton(event) {
   event.preventDefault();
 
@@ -39,9 +42,29 @@ async function likeButton(event) {
 async function commentButton(event) {
   event.preventDefault();
   console.log("comment button info", $(this));
+  $(".hero").remove();
+  let article_id = $(this)[0].dataset.modal_num;
+  console.log(article_id);
+  $.ajax({
+    type: 'GET',
+    url: `/articles/comments/${article_id}`
+  }).done(function(data) {
+    console.log(data);
+    let first = 0;
+    let beforeHero = data.indexOf("<body>");
+    let firstIndex = data.indexOf("<main");
+    let lastIndex = data.length;
+    let firstNewData = data.slice(first, beforeHero);
+    let newData = data.slice(firstIndex,lastIndex);
+    let finalHtml = firstNewData + newData;
+  cmntModal.style.display ="flex";
+    $(cmntModal).html(finalHtml);
 
-  // user can see all previous comments on article on a new page.
-}
+  });
+ 
+};
+
+
 
 async function postCommentButton(event) {
   event.preventDefault();
@@ -49,10 +72,11 @@ async function postCommentButton(event) {
   // let commentId = $(this).dataset.comment-num;
 
   let article_id = $(this)[0].dataset.article_num;
-  const comment_text = document.querySelector(`input[data-comment-num="${article_id}"]`).value.trim();
+  console.log(article_id);
+  var comment_text = document.querySelector(`input[data-comment-num="${article_id}"]`).value.trim();
 
     // console.log(window.location);
-    console.log(article_id);
+
 console.log(comment_text)
     if(comment_text) {
         const res = await fetch('/api/comments', {
@@ -100,3 +124,7 @@ $(".likeBtn").click(likeButton);
 $(".commentBtn").click(commentButton);
 $(".postCommentBtn").click(postCommentButton);
 $(".saveBtn").click(saveButton);
+
+cmntModalClose.onclick = function() {
+  cmntModal.style.display="none";
+}

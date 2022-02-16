@@ -1,0 +1,52 @@
+
+    <div class="modal-background commentModal1"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">{{article.title}}</p>
+            <button class="delete" aria-label="close" class="comment-modal-close"></button>
+        </header>
+        <section class="modal-card-body">
+          
+<article class="media">
+  <figure class="media-left">
+  </figure>
+  <div class="media-content">
+    <div class="content title">
+      <p>
+        <strong>{{article.user.username}}</strong>
+        <br>
+<a href="{{article.post_url}}">URL</a>  
+ <br>
+      </p>
+    </div>
+
+    <article class="media">
+      {{> comments article.comments}}
+
+  </div>
+</article>
+
+<article class="media" >
+   <div class="media-content">
+    <div class="field">
+      <p class="control">
+        <input class="input" placeholder="Add a comment..." data-comment-num={{article.id}} ></input>
+      </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <button class="button postCommentBtn" data-article_num={{article.id}}>Post comment</button>
+      </p>
+    </div>
+  </div>
+</article>
+
+
+        
+        </section>
+    </div>
+
+
+
+
+
