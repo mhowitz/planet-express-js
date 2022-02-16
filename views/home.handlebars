@@ -5,14 +5,15 @@
         {{#each articles as |article|}}
             {{> article-info article data=article.article_id}}
         {{/each}}
-        {{!-- need something here to tell to always post bottom left, not wrap, currently not working :( ) --}}
-        {{!-- <div class="is-vertical">
+        {{!-- pagation to divide up articles into max amount per page --}}
+        {{!-- need something here to tell to always post bottom left, not wrap, currently not working}}
+        {{<div class="is-vertical">
             <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
                 <a class="pagination-previous is-disabled has-text-white" title="This is the first page">Previous</a>
                 <a class="pagination-next has-text-white">Next page</a>
                 <ul class="pagination-list">
                     <li>
-                        {{!-- will need to use handles bars to connect with current page etc.. --}}
+                        
                     <a class="pagination-link is-current has-text-white" aria-label="Page 1" aria-current="page">1</a>
                     </li>
                     <li>
@@ -25,5 +26,4 @@
             </nav>
         </div> --}}
     </div>
-    
 </article>

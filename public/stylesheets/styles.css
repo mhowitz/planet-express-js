@@ -125,6 +125,7 @@ margin:0.4em auto;}
  }
 
 .footer {
+    padding: 40px 10px 50px 30px;
     background-color: var(--primary-color);
 }
 
@@ -135,6 +136,11 @@ a:hover {color: var(--tertiary-color)}
 
 .tile {
     border-radius: 0;
+}
+
+.no-hover :hover{
+    color: black;
+    /* pointer-events: none; */
 }
 
 /* mobile article padding */
@@ -148,5 +154,9 @@ a:hover {color: var(--tertiary-color)}
 @media screen and (max-width:1023px) {
     .bg-color {
         background-color: var(--primary-color);
+    }
+
+    .blue {
+        background-color: var(--secondary-color);
     }
 }
