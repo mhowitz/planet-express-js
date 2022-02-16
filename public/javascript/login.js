@@ -18,7 +18,7 @@ async function loginButton(event) {
             headers: { 'Content-Type': 'application/json'}
         });
         if(res.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/profile');
             // alert("logged in ! ")
         } else {
             // alert(res.statusText)
@@ -53,7 +53,7 @@ async function signUpForm(event){
         });
 
         if(res.ok){
-            document.location.replace('/dashboard');
+            document.location.replace('/profile');
         }else {
             signUpFail.classList.remove('is-invisible')
             // alert(res.statusText);

@@ -1,52 +1,77 @@
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planet Express.js</title>
-  <link rel="icon" type="image/x-icon" href="/images/SeekPng.com_rocket-png_2460790.png" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Express.js</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/SeekPng.com_rocket-png_2460790.png"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-  <link rel="stylesheet" href="/stylesheets/styles.css" />
-  <link rel="stylesheet" href="css/mystyles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/2258c7fb5c.js" crossorigin="anonymous"></script>
-  <script src=""></script>
-  {{!
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      {{!-- href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" --}}
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap";
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2258c7fb5c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src=""></script>
+    {{!
   <link rel="stylesheet" type="text/css" href="/css/jass.css"> }}
 
-</head>
+  </head>
 
-<body>
-  <!-- Hero head: will stick at the top -->
+  <body>
+    <!-- Hero head: will stick at the top -->
 
-  <nav class="navbar hero-head" id="navBar">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="/images/planet-logo.png" alt="Logo" class="icon is-small logo p-0" />
-      </a>
-      <span class="navbar-burger navbar-end" data-target="navbarMenuHeroA">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </div>
-    <div id="navbarMenuHeroA" class="navbar-menu">
-      <div class="navbar-end">
-        {{#if loggedIn}}
-        <a id="logout"
-          class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight">Logout</a>
-        <a href="/profile"
-          class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight">Profile</a>
-        <a class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
-          id="articleModal">Post an Article</a>
-        {{else}}
-        <a href="/login"
-          class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight">Login/Sign
-          up</a>
-        {{/if}}
+    <nav class="navbar hero-head is-justify-content-space-between" id="navBar">
+        <a class="" href="/">
+          <img
+            src="/images/planet-logo.png"
+            alt="Logo"
+            class="icon is-small logo p-0"
+          />
+        </a>
+      <div class="navbar-brand">
+        <span class="navbar-burger navbar-end sticky" data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroA" class="navbar-menu bg-color">
+        <div class="navbar-end">
+          {{#if loggedIn}}
+            <a
+              id="logout"
+              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            >Logout</a>
+            <a
+              href="/profile"
+              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            >Profile</a>
+            <a
+              class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+              id="articleModal"
+            >Post an Article</a>
+          {{else}}
+            <a
+              href="/login"
+              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            >Login/Sign up</a>
+          {{/if}}
+        </div>
       </div>
     </div>
   </nav>
@@ -118,7 +143,28 @@
         <button class="modal-close is-large" aria-label="close"></button>
       </div>
     </div>
-
+    
+    <footer class="footer">
+  <div class="content has-text-centered has-text-white has-text-weight-bold">
+    <p>
+      <strong>Planet Express.js</strong> created by
+        <br>
+        <a href="https://github.com/mhowitz"target="_blank">Mikayla Howitz</a>
+      <br>
+      <a href="https://github.com/davidtait1996"target="_blank">David Tait</a>
+      <br>
+       <a href="https://github.com/JasonWisniewski"target="_blank">Jason Wisniewski</a>
+       <br>
+      and <a href="https://github.com/sabrielg"target="_blank">Sabriel Gee</a>. 
+      <br>
+      The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php"target="_blank">MIT</a>.
+    </p>
+  </div>
+  <div>
+    <a
+    href="https://apod.nasa.gov/apod/astropix.html" target="blank">
+    <img src="/images/kindpng_326793.png"> </a>
   </div>
 
 

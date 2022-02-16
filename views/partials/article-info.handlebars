@@ -1,4 +1,4 @@
-<card class="tile is-6 is-parent">
+<card class="tile is-4 is-parent">
   <card class="tile is-vertical column box is-child tile article-body">
     <article class="title">
 
@@ -35,7 +35,7 @@
       
       {{!-- display user name when post created --}}
       <div class="p-1">
-        <h4>Added by {{user.username}}</h4>
+        <h4 class="has-text-weight-bold">Added by {{user.username}}</h4>
       </div>
     </div>
     {{#if loggedIn}}
@@ -46,7 +46,7 @@
 <form action="">
           <div class="field">
           <p class="control has-icons-left has-icons-right m-1">
-            <input class="input is-rounded" id="commentInput" data-comment_num={{id}} type="comment" placeholder="Comment">
+            <input class="input is-rounded" id="commentInput" data-comment-num={{id}} type="comment" placeholder="Comment">
             <span class="icon is-small is-left">
               <i class="far fa-comment"></i>
             </span>
@@ -71,24 +71,26 @@
         </span>
         <p data-like_num={{id}}>{{vote_count}}</p>
       </div>
-<a href="/articles/{{id}}">
-      <div class="m-1 commentBtn js-modal-trigger" id ="commentBtn" data-commentModal={{id}}>
+{{!-- <a href="/articles/comments/{{id}}"> --}}
+      <div class="m-1 commentBtn js-modal-trigger" id ="commentBtn" data-modal_num={{id}}>
 
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-comments"></i>
         </span>
         <p>{{comment_num}}</p>
       </div>
-      </a>
+      {{!-- </a> --}}
       <div class="m-1 saveBtn " id="saveBtn">
+      {{!-- <div class="m-1 saveBtn " id="saveBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-save"></i>
         </span>
-      </div>
+      </div> --}}
     </footer>
     {{/if}}
   </card>
 </card>
+<div class="modal" id="comment-modal"></div>
  {{!-- {{>comment-modal articleComments}} --}}
 
 {{!-- 

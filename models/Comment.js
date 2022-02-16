@@ -23,14 +23,6 @@ Comment.init(
         model: "user",
         key: "id",
       },
-      article_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: "articles",
-          key: "id"
-        }
-      }
     },
 
     },

@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #0E1428;
+    /* --primary-color: #0E1428; */
+    --primary-color: #0f0e1c;
     --secondary-color: #36518a;
     --tertiary-color: #b4d9f3;
 }
@@ -34,19 +35,19 @@ nav {
      background-color: var(--primary-color) ;
  }
 
- /* .button {
+ .button {
      background-color:var(--secondary-color);
      font-family: 'Poppins', sans-serif;
-     color: #0f0e1c;
- } */
+     color: #fff;
+ }
 
- a.button2{
+.button2{
     display:inline-block;
     padding:0.5em 3em;
     border:0.16em solid var(--tertiary-color);
     margin:0 0.3em 0.3em 0;
     box-sizing: border-box;
-    text-decoration:none;
+    text-decoration:none !important;
     text-transform:uppercase;
     font-family:'Roboto',sans-serif;
     font-weight:400;
@@ -54,19 +55,20 @@ nav {
     text-align:center;
     transition: all 0.15s;
     }
-    a.button2:hover{
-    color:var(--secondary-color);
-    border-color:var(--tertiary-color);
+.button2:hover{
+     color:var(--tertiary-color) !important;
+     border-color:var(--tertiary-color) !important;
     }
-    a.button2:active{
-    color:#BBBBBB;
-    border-color:#BBBBBB;
+.button2:active{
+    color: var(--tertiary-color) !important;
+    border-color:var(--tertiary-color) !important;
     }
     @media all and (max-width:30em){
-    a.button2{
+.button2{
     display:block;
 margin:0.4em auto;}
     }
+
 
  .title {
      color: var(--secondary-color);
@@ -103,10 +105,23 @@ margin:0.4em auto;}
     background-color: transparent !important;
  }
 
+ .logo-hover:hover{
+     opacity: .1;
+ }
+
+ .filter-align {
+     padding-left: 41;
+ }
+
 
  .filter {
      background-color: var(--primary-color);
      color: white !important;
+ }
+
+ .filter-flex-box {
+     display: flex !important ;
+     justify-content: center !important;
  }
 
 .footer {
@@ -114,10 +129,24 @@ margin:0.4em auto;}
 }
 
 
-a:link {color:var(--primary-color);}  
+a:link {color:var(--secondary-color);}  
 a:visited {color: var(--secondary-color)}  
 a:hover {color: var(--tertiary-color)}  
 
 .tile {
     border-radius: 0;
+}
+
+/* mobile article padding */
+@media screen and (max-width:768px) {
+    .mobile-spacing {
+        padding-left: 30px !important;
+    }
+}
+
+/* hamburger bg color when */
+@media screen and (max-width:1023px) {
+    .bg-color {
+        background-color: var(--primary-color);
+    }
 }
