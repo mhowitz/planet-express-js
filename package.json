@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seeds": "node seeds/index.js",
-    "css-build": "node-sass --omit-source-map-url public/sass/mystyles.scss public/stylesheets/mystyles.css",
-    "css-watch": "npm run css-build -- --watch"
+    "seeds": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,7 @@
   },
   "homepage": "https://github.com/mhowitz/planet-express-js#readme",
   "dependencies": {
+    "ajax": "^0.0.4",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^15.0.0",
@@ -31,9 +30,5 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.15.0",
     "url-metadata": "^2.5.0"
-  },
-  "devDependencies": {
-    "bulma": "^0.9.3",
-    "node-sass": "^7.0.1"
   }
 }

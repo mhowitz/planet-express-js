@@ -71,14 +71,16 @@
         </span>
         <p data-like_num={{id}}>{{vote_count}}</p>
       </div>
-
-      <div class="m-1 commentBtn">
+{{!-- <a href="/articles/comments/{{id}}"> --}}
+      <div class="m-1 commentBtn js-modal-trigger" id ="commentBtn" data-modal_num={{id}}>
 
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-comments"></i>
         </span>
         <p>{{comment_num}}</p>
       </div>
+      {{!-- </a> --}}
+      <div class="m-1 saveBtn " id="saveBtn">
       {{!-- <div class="m-1 saveBtn " id="saveBtn">
         <span class="icon fa-lg" style="pointer-events: all; cursor:pointer">
           <i class="far fa-save"></i>
@@ -88,6 +90,9 @@
     {{/if}}
   </card>
 </card>
+<div class="modal" id="comment-modal"></div>
+ {{!-- {{>comment-modal articleComments}} --}}
+
 {{!-- 
 <script src="/javascript/comments.js"></script> --}}
 

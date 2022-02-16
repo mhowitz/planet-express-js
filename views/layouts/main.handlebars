@@ -15,7 +15,6 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <link rel="stylesheet" href="/stylesheets/styles.css" />
-    <link rel="stylesheet" href="css/mystyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -75,90 +74,77 @@
           {{/if}}
         </div>
       </div>
+
+    </div>
+  </nav>
+  <hero class="hero is-medium">
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title has-text-white is-size-1">
+          Planet Express.js
+        </p>
+        <p class="subtitle has-text-white is-size-4 has-text-weight-bold is-uppercase">
+          The resource library for all your coding needs!
+        </p>
       </div>
-    </nav>
-    <hero class="hero is-medium">
+    </div>
+  </hero>
 
-      <!-- Hero content: will be in the middle -->
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <p class="title has-text-white is-size-1">
-            Planet Express.js
-          </p>
-          <p class="subtitle has-text-white is-size-4 has-text-weight-bold is-uppercase">
-            The resource library for all your coding needs!
-          </p>
-        </div>
+  {{!-- {{> filter }} --}}
+  <main class="article">
+    {{{body}}}
+  </main>
+  <div id="article-modal" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+      <div class="box">
+        <form class="formPost">
+          <h1 class="title is-size-4 has-text-white">Post An Article</h1>
+          <div class="field">
+            <label class="label">Article Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Text input" id="articleTitle" />
+
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">URL</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Format: https://www.article.com" id="articleUrl" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Category</label>
+            <div class="control">
+              <div class="select">
+                <select name="category" id="catNo">
+                  <option data="1">HTML</option>
+                  <option data="2">CSS</option>
+                  <option data="3">JavaScript</option>
+                  <option data="4">MYSQL</option>
+                  <option data="5">Express</option>
+                  <option data="6">Node</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <p class="invalidModal is-invisible has-text-warning">Invalid Post,
+            make sure that the url is in 'http://www.website.com' format</p>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link button" id="articleBtn">Submit</button>
+            </div>
+          </div>
+          <p class="is-invisible has-text-success successModal">Successfully
+            Posted!</p>
+        </form>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
-    </hero>
-
-    {{!-- {{> filter }} --}}
-    <main class="article">
-      {{{body}}}
-    </main>
-    <div id="article-modal" class="modal">
-      <div class="modal-background"></div>
-
-      <div class="modal-content">
-        <div class="box">
-          <form class="formPost">
-            <h1 class="title is-size-3 has-text-black has-text-centered">Post An Article</h1>
-            <div class="field">
-              <label class="label">Article Title</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Text input"
-                  id="articleTitle"
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">URL</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="Format: https://www.article.com"
-                  id="articleUrl"
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">Category</label>
-              <div class="control">
-                <div class="select">
-                  <select name="category" id="catNo">
-                    <option data="1">HTML</option>
-                    <option data="2">CSS</option>
-                    <option data="3">JavaScript</option>
-                    <option data="4">MYSQL</option>
-                    <option data="5">Express</option>
-                    <option data="6">Node</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <p class="invalidModal is-invisible has-text-warning">Invalid Post,
-              make sure that the url is in 'http://www.website.com' format</p>
-            <div class="field is-grouped">
-              <div class="control">
-                <button
-                  class="button blue button"
-                  id="articleBtn"
-                >Submit</button>
-              </div>
-            </div>
-            <p class="is-invisible has-text-success successModal">Successfully
-              Posted!</p>
-          </form>
-          <button class="modal-close is-large" aria-label="close"></button>
-        </div>
-      </div>
-
     </div>
     
     <footer class="footer">
@@ -183,21 +169,42 @@
     href="https://apod.nasa.gov/apod/astropix.html" target="blank">
     <img src="/images/kindpng_326793.png"> </a>
   </div>
-</footer>
 
 
-    {{#if loggedIn}}
+  <footer class="footer">
+    <div class="content has-text-centered has-text-white">
+      <p>
+        <strong>Planet Express.js</strong> created by
+        <br>
+        <a href="https://github.com/mhowitz" target="_blank">Mikayla Howitz</a>
+        <br>
+        <a href="https://github.com/davidtait1996" target="_blank">David Tait</a>
+        <br>
+        <a href="https://github.com/JasonWisniewski" target="_blank">Jascon Wisniewski</a>
+        <br>
+        and <a href="https://github.com/sabrielg" target="_blank">Sabriel Gee</a>.
+        <br>
+        The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+      </p>
+    </div>
+    <div>
+      <a href="https://apod.nasa.gov/apod/astropix.html" target="blank">
+        <img src="/images/kindpng_326793.png"> </a>
+    </div>
+  </footer>
 
-      <script src="/javascript/modal-post.js"></script>
-      <script src="/javascript/logout.js"></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"
-      ></script>
-    {{/if}}
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="/javascript/filter.js"></script>
-    <script src="/javascript/icon.js"></script>
-  </body>
+  {{#if loggedIn}}
+
+  <script src="/javascript/modal-post.js"></script>
+  <script src="/javascript/logout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+  {{/if}}
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="/javascript/filter.js"></script>
+  <script src="/javascript/icon.js"></script>
+</body>
 
 </html>

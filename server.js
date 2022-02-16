@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./routes');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+process.env.UV_THREADPOOL_SIZE=128;
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 

@@ -1,6 +1,7 @@
 module.exports = {
-  // has something in here that will do work idk what here but we will figure that out later
-  time_format: function (){
-    return new Date
-  }
+    format_date: date => {
+      return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
+        date
+      ).getFullYear()}`;
+    }
 }
