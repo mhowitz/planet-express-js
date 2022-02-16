@@ -50,8 +50,15 @@ async function commentButton(event) {
     url: `/articles/comments/${article_id}`
   }).done(function(data) {
     console.log(data);
+    let first = 0;
+    let beforeHero = data.indexOf("<body>");
+    let firstIndex = data.indexOf("<main");
+    let lastIndex = data.length;
+    let firstNewData = data.slice(first, beforeHero);
+    let newData = data.slice(firstIndex,lastIndex);
+    let finalHtml = firstNewData + newData;
   cmntModal.style.display ="flex";
-    $(cmntModal).html(data);
+    $(cmntModal).html(finalHtml);
 
   });
  
