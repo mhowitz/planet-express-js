@@ -1,6 +1,6 @@
 
 let cmntModal = document.querySelector('#comment-modal');
-let cmntModalClose = document.querySelector('#comment-modal-close');
+let cmntModalClose = document.querySelector('.comment-modal-close');
 let hero = document.querySelector('.hero')
 async function likeButton(event) {
   event.preventDefault();
@@ -51,32 +51,13 @@ async function commentButton(event) {
   }).done(function(data) {
     console.log(data);
   cmntModal.style.display ="flex";
-    var body = document.querySelector('.hero');
-    
-    $(cmntModal).html(data)
-    body.style.display("hidden")
+    $(cmntModal).html(data);
 
-
-   
   });
  
- 
+};
 
 
-  // const res = await fetch('/articles/comments/:id', {
-  //   method: 'get'
-  // });
-
-  // if(res.ok) {
-  //   console.log("got all comments");
-  //   console.log(res.json());
-
-  // }else {
-  //   console.log('not working for comments');
-  //   alert(res.statusText)
-  // }
-
-}
 
 async function postCommentButton(event) {
   event.preventDefault();
