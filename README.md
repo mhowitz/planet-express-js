@@ -30,8 +30,8 @@ Find needed resources quickly by using our patented filter functions! Log in to 
 
 Link to Walk-through Video: [VIDEO](https://drive.google.com/file/d/1-LsmdOaUTLL-mcsryreK-061a-GOLecR/view)
 
-
-![screenshot-of-browser](images/insomnia.jpg)
+![submitting-an-article](/images/Planet_Express_js.jpg)
+![user-profile](/images/Planet_Express_js1.jpg)
 
 
 
