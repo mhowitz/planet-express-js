@@ -4,10 +4,9 @@
 
 Link to Repo: [GITHUB-REPO]https://github.com/mhowitz/planet-express-js
 
-Link to Walkthrough Video: [VIDEO]
-
 ## Description
 
+An innovative new web application that allows you save and organize resources from all over the World Wide Web with efficiency and ease. No more scrolling through endless bookmarks looking for obscure documentation, no more fruitless google searches, Planet Express.js is here to help you become a better student, programmer, or developer!
 
 
 ## Table of Contents
@@ -25,10 +24,25 @@ Clone the GitHub repo to the user's computer. Run "npm i" in the terminal to ins
 
 ## Usage
 
+Planet Express.js is a beautiful, unique resource library created by a team of experts that specialize in inefficiently saving bookmarks and documentation - Planet Express.js was created with you in mind! Simply enter the URL for the vital resource, name it, and assign it category - Planet Express.js will do the rest!
 
+Find needed resources quickly by using our patented filter functions! Log in to your own profile to see resources you’ve previously posted and even comment and upvote resources posted by other users!
 
-![screenshot-of-browser](images/insomnia.jpg)
+Link to Walk-through Video: [VIDEO](https://youtu.be/pJSaqMgbeCU)
 
+![submitting-an-article](/public/images/Planet_Express_js.jpg)
+
+homepage:
+
+<img src="./public/images/screen-shot-home.png">
+
+login page:
+
+<img src="./public/images/screen-shot-login.png">
+
+user profile:
+
+<img src="./public/images/screen-shot-profile.png">
 
 
 ## License 
@@ -52,6 +66,6 @@ Mikayla Howitz
 David Tait
 
 ## Questions
+github usernames: mhowitz, davidtait1996, JasonWisniewski, sabrielg
 
-
-
+github link : https://github.com/mhowitz/planet-express-js
