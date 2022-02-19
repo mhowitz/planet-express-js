@@ -2,10 +2,11 @@
 let cmntModal = document.querySelector('#comment-modal');
 let cmntModalClose = document.querySelector('.comment-modal-close');
 
-cmntModalClose.onclick = function() {
+// cmntModalClose.onclick = function() {
+//   cmntModal.style.display="none";
+// }
 
-  cmntModal.style.display="none";
-}
+
 async function likeButton(event) {
   event.preventDefault();
 
