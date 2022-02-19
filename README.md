@@ -31,8 +31,18 @@ Find needed resources quickly by using our patented filter functions! Log in to 
 Link to Walk-through Video: [VIDEO](https://drive.google.com/file/d/1-LsmdOaUTLL-mcsryreK-061a-GOLecR/view)
 
 ![submitting-an-article](/images/Planet_Express_js.jpg)
-![user-profile](/images/Planet_Express_js1.jpg)
 
+homepage:
+
+<img src="./public/images/screen-shot-home.png">
+
+login page:
+
+<img src="./public/images/screen-shot-login.png">
+
+user profile:
+
+<img src="./public/images/screen-shot-profile.png">
 
 
 ## License 
