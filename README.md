@@ -2,7 +2,9 @@
 
 ![badge](https://img.shields.io/badge/MIT-License-Green)
 
-Link to Repo: [GITHUB-REPO]https://github.com/mhowitz/planet-express-js
+Link to Repo: [GITHUB-REPO](https://github.com/mhowitz/planet-express-js)
+
+Link to deployed site: [HEROKU-Link](https://planet-express-js.herokuapp.com/)
 
 Link to deployed site: [HEROKU-Link]https://planet-express-js.herokuapp.com/
 
@@ -32,24 +34,26 @@ Find needed resources quickly by using our patented filter functions! Log in to 
 
 Link to Walk-through Video: [VIDEO](https://youtu.be/pJSaqMgbeCU)
 
-![submitting-an-article](/public/images/Planet_Express_js.jpg)
-
-homepage:
+Homepage:
 
 <img src="./public/images/screen-shot-home.png">
 
-login page:
+Login page:
 
 <img src="./public/images/screen-shot-login.png">
 
-user profile:
+User profile:
 
 <img src="./public/images/screen-shot-profile.png">
+
+Posting an article:
+
+<img src="./public/images/Planet_Express_js.jpg">
 
 
 ## License 
 
-[MIT License Link]https://choosealicense.com/licenses/mit/
+[MIT License Link](https://choosealicense.com/licenses/mit/)
 
 MIT License
 
@@ -62,12 +66,13 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contributing
-Jason Wisniewski
-Sabriel Gee
-Mikayla Howitz
-David Tait
+Jason Wisniewski  
+Sabriel Gee  
+Mikayla Howitz  
+David Tait  
 
 ## Questions
-github usernames: mhowitz, davidtait1996, JasonWisniewski, sabrielg
+Github usernames: mhowitz, davidtait1996, JasonWisniewski, sabrielg
 
-github link : https://github.com/mhowitz/planet-express-js
+Github link : https://github.com/mhowitz/planet-express-js
+
