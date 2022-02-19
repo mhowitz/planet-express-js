@@ -6,6 +6,8 @@ Link to Repo: [GITHUB-REPO](https://github.com/mhowitz/planet-express-js)
 
 Link to deployed site: [HEROKU-Link](https://planet-express-js.herokuapp.com/)
 
+Link to deployed site: [HEROKU-Link]https://planet-express-js.herokuapp.com/
+
 ## Description
 
 An innovative new web application that allows you save and organize resources from all over the World Wide Web with efficiency and ease. No more scrolling through endless bookmarks looking for obscure documentation, no more fruitless google searches, Planet Express.js is here to help you become a better student, programmer, or developer!
@@ -73,3 +75,4 @@ David Tait
 Github usernames: mhowitz, davidtait1996, JasonWisniewski, sabrielg
 
 Github link : https://github.com/mhowitz/planet-express-js
+
