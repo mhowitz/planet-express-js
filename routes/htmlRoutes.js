@@ -163,13 +163,10 @@ routes.get("/:option?/:option2?", async (req, res) => {
   categoriesParams = req.params.option2 ? req.params.option2.split("&") : []
   var promises = [];
   let filter;
-console.log(req.params)
   if(req.params.option === "category"){
     //sets filter automatically based on above category array
     // filter = {category_id : categories.find(x => x.lang.toLowerCase() === req.params.option2.toLowerCase()).id}
-    console.log(categoriesParams)
     filter = {category_id: categoriesParams.map(category => categories.find(x => x.lang.toLowerCase() === category.toLowerCase()).id)}
-    console.log(filter)
   } else if (req.params.option === "user"){
     //if there is a number after /user
     if(Number.isInteger(parseInt(req.params.option2))){
