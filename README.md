@@ -27,8 +27,17 @@ Clone the GitHub repo to the user's computer. Run "npm i" in the terminal to ins
 
 
 
-![screenshot-of-browser](images/insomnia.jpg)
+homepage:
 
+<img src="./public/images/screen-shot-home.png">
+
+login page:
+
+<img src="./public/images/screen-shot-login.png">
+
+user profile:
+
+<img src="./public/images/screen-shot-profile.png">
 
 
 ## License 
