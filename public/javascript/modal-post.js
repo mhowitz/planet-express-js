@@ -52,4 +52,4 @@ async function articlePost(event) {
 
 };
 
-document.querySelector('#articleBtn').addEventListener('click', articlePost);
+document.querySelector('#articleButton').addEventListener('click', articlePost);

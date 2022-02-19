@@ -1,7 +1,11 @@
 
 let cmntModal = document.querySelector('#comment-modal');
 let cmntModalClose = document.querySelector('.comment-modal-close');
-let hero = document.querySelector('.hero')
+
+cmntModalClose.onclick = function() {
+
+  cmntModal.style.display="none";
+}
 async function likeButton(event) {
   event.preventDefault();
 
@@ -98,8 +102,7 @@ console.log(comment_text)
             alert(res.statusText);
         }
     }
-}
-
+};
 
 async function saveButton(event) {
   event.preventDefault();
@@ -125,6 +128,3 @@ $(".commentBtn").click(commentButton);
 $(".postCommentBtn").click(postCommentButton);
 $(".saveBtn").click(saveButton);
 
-cmntModalClose.onclick = function() {
-  cmntModal.style.display="none";
-}
