@@ -1,76 +1,52 @@
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planet Express.js</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/images/SeekPng.com_rocket-png_2460790.png"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planet Express.js</title>
+  <link rel="icon" type="image/x-icon" href="/images/SeekPng.com_rocket-png_2460790.png" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="/stylesheets/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      {{!-- href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" --}}
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap";
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/2258c7fb5c.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src=""></script>
-    {{!
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="/stylesheets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link {{!-- href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" --}}
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" ; rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/2258c7fb5c.js" crossorigin="anonymous"></script>
+  <script src=""></script>
+  {{!
   <link rel="stylesheet" type="text/css" href="/css/jass.css"> }}
 
-  </head>
+</head>
 
-  <body>
-    <!-- Hero head: will stick at the top -->
+<body>
+  <!-- Hero head: will stick at the top -->
 
-    <nav class="navbar hero-head is-justify-content-space-between" id="navBar">
-        <a class="" href="/">
-          <img
-            src="/images/planet-logo.png"
-            alt="Logo"
-            class="icon is-small logo p-0"
-          />
-        </a>
-      <div class="">
-        <div class="mt-5">
-          <span class="navbar-burger navbar-end has-text-white has-text-weight-bold blue" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
+  <nav class="navbar hero-head is-justify-content-space-between" id="navBar">
+    <a class="" href="/">
+      <img src="/images/planet-logo.png" alt="Logo" class="icon is-small logo p-0" />
+    </a>
+    <div class="">
+      <div class="mt-5">
+        <span class="navbar-burger navbar-end has-text-white has-text-weight-bold blue" data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
       <div id="navbarMenuHeroA" class="navbar-menu blue">
         <div class="navbar-end">
           {{#if loggedIn}}
-            <a
-              id="logout"
-              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
-            >Logout</a>
-            <a
-              href="/profile"
-              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
-            >Profile</a>
-            <a
-              class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
-              id="articleModal"
-            >Post an Article</a>
+          <a id="logout"
+            class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight">Logout</a>
+          <a href="/profile"
+            class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight">Profile</a>
+          <a class="navbar-item js-modal-trigger is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
+            id="articleModal">Post an Article</a>
           {{else}}
-            <a
-              href="/login"
-              class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight"
-            >Login/Sign up</a>
+          <a href="/login"
+            class="navbar-item is-size-5 has-text-white is-uppercase has-text-weight-bold space-highlight">Login/Sign
+            up</a>
           {{/if}}
         </div>
       </div>
@@ -96,13 +72,40 @@
   <main class="article">
     {{{body}}}
   </main>
+
+
+    <footer class="footer">
+      <div class="content has-text-centered has-text-white has-text-weight-bold">
+        <p>
+          Planet Express.js created by
+          <br>
+          <a href="https://github.com/mhowitz" target="_blank">Mikayla Howitz</a>
+          <br>
+          <a href="https://github.com/davidtait1996" target="_blank">David Tait</a>
+          <br>
+          <a href="https://github.com/JasonWisniewski" target="_blank">Jason Wisniewski</a>
+          <br>
+          and <a href="https://github.com/sabrielg" target="_blank">Sabriel Gee</a>.
+          <br>
+          The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+        </p>
+      </div>
+      <div>
+        <a href="https://apod.nasa.gov/apod/astropix.html" target="blank">
+          <img src="/images/kindpng_326793.png"> </a>
+      </div>
+
+
+      </footer>
+
   <div id="article-modal" class="modal">
     <div class="modal-background"></div>
 
     <div class="modal-content">
       <div class="box">
         <form class="formPost">
-          <h1 class="title is-size-4 has-text-white">Post An Article</h1>
+          <h1 class="title is-size-4 has-text-dark">Post An Article</h1>
           <div class="field">
             <label class="label">Article Title</label>
             <div class="control">
@@ -137,7 +140,7 @@
             make sure that the url is in 'http://www.website.com' format</p>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link button" id="articleBtn">Submit</button>
+              <button class="button is-link button" id="articleButton">Submit</button>
             </div>
           </div>
           <p class="is-invisible has-text-success successModal">Successfully
@@ -146,65 +149,16 @@
         <button class="modal-close is-large" aria-label="close"></button>
       </div>
     </div>
-    
-    <footer class="footer">
-  <div class="content has-text-centered has-text-white has-text-weight-bold">
-    <p>
-      Planet Express.js created by
-        <br>
-        <a href="https://github.com/mhowitz"target="_blank">Mikayla Howitz</a>
-      <br>
-      <a href="https://github.com/davidtait1996"target="_blank">David Tait</a>
-      <br>
-       <a href="https://github.com/JasonWisniewski"target="_blank">Jason Wisniewski</a>
-       <br>
-      and <a href="https://github.com/sabrielg"target="_blank">Sabriel Gee</a>. 
-      <br>
-      The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php"target="_blank">MIT</a>.
-    </p>
-  </div>
-  <div>
-    <a
-    href="https://apod.nasa.gov/apod/astropix.html" target="blank">
-    <img src="/images/kindpng_326793.png"> </a>
-  </div>
+      {{#if loggedIn}}
 
+      <script src="/javascript/modal-post.js"></script>
+      <script src="/javascript/logout.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+      {{/if}}
 
-  <footer class="footer">
-    <div class="content has-text-centered has-text-white">
-      <p>
-        <strong>Planet Express.js</strong> created by
-        <br>
-        <a href="https://github.com/mhowitz" target="_blank">Mikayla Howitz</a>
-        <br>
-        <a href="https://github.com/davidtait1996" target="_blank">David Tait</a>
-        <br>
-        <a href="https://github.com/JasonWisniewski" target="_blank">Jascon Wisniewski</a>
-        <br>
-        and <a href="https://github.com/sabrielg" target="_blank">Sabriel Gee</a>.
-        <br>
-        The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
-      </p>
-    </div>
-    <div>
-      <a href="https://apod.nasa.gov/apod/astropix.html" target="blank">
-        <img src="/images/kindpng_326793.png"> </a>
-    </div>
-  </footer>
-
-
-  {{#if loggedIn}}
-
-  <script src="/javascript/modal-post.js"></script>
-  <script src="/javascript/logout.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
-  {{/if}}
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="/javascript/filter.js"></script>
-  <script src="/javascript/icon.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="/javascript/filter.js"></script>
+      <script src="/javascript/icon.js"></script>
 </body>
 
 </html>
