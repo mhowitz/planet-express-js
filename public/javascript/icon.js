@@ -1,5 +1,3 @@
-
-
 async function likeButton(event) {
   event.preventDefault();
 
@@ -27,7 +25,6 @@ async function likeButton(event) {
 
     iconEl.classList.remove("far");
     iconEl.classList.add("fas");
-    
   } else {
     alert("you already have voted on this");
   }
@@ -38,10 +35,9 @@ async function commentButton(event) {
   $(".hero").remove();
   let article_id = $(this)[0].dataset.modal_num;
   $.ajax({
-    type: 'GET',
-    url: `/articles/comments/${article_id}`
-  }).done(function(data) {
-
+    type: "GET",
+    url: `/articles/comments/${article_id}`,
+  }).done(function (data) {
     let first = 0;
     let beforeHero = data.indexOf("<body>");
     let firstIndex = data.indexOf("<main");
@@ -49,66 +45,60 @@ async function commentButton(event) {
     let firstNewData = data.slice(first, beforeHero);
     let newData = data.slice(firstIndex, noFooter1);
     let finalHtml = firstNewData + newData;
-    
-let cmntModal = $('#comment-modal');
 
+    let cmntModal = $("#comment-modal");
 
-
-cmntModal.addClass('is-active')
+    cmntModal.addClass("is-active");
     cmntModal.html(finalHtml);
 
-    let cmntModalClose = $('.comment-modal-close');
-  
-cmntModalClose.click(function() {
-  cmntModal.removeClass("is-active");
-});
- 
-  })
-  };
+    let cmntModalClose = $(".comment-modal-close");
 
-
-
+    cmntModalClose.click(function () {
+      cmntModal.removeClass("is-active");
+      document.location.replace('/');
+    });
+  });
+}
 
 async function postCommentButton(event) {
   event.preventDefault();
 
   let article_id = $(this)[0].dataset.article_num;
   console.log(article_id);
-  var comment_text = document.querySelector(`input[data-comment-num="${article_id}"]`).value.trim();
+  var comment_text = document
+    .querySelector(`input[data-comment-num="${article_id}"]`)
+    .value.trim();
 
-console.log(comment_text)
-    if(comment_text) {
-        const res = await fetch('/api/comments', {
-            method: 'post',
-            body: JSON.stringify({
-              comment_text,
-               article_id
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+  console.log(comment_text);
+  if (comment_text) {
+    const res = await fetch("/api/comments", {
+      method: "post",
+      body: JSON.stringify({
+        comment_text,
+        article_id,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-        if(res.ok) {
-            document.location.reload();
-            console.log("Posted comment!")
-            
-        } else {
-            alert(res.statusText);
-        }
+    if (res.ok) {
+      document.location.reload();
+      console.log("Posted comment!");
+    } else {
+      alert(res.statusText);
     }
-};
+  }
+}
 
 async function saveButton(event) {
   event.preventDefault();
   console.log("save button info", $(this));
 }
-$(document).ready(function() {
-  $(".navbar-burger").click(function() {
-
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
-
+$(document).ready(function () {
+  $(".navbar-burger").click(function () {
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
   });
 });
 
@@ -117,4 +107,3 @@ $(".likeBtn").click(likeButton);
 $(".commentBtn").click(commentButton);
 $(".postCommentBtn").click(postCommentButton);
 $(".saveBtn").click(saveButton);
-
