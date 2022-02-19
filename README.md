@@ -6,7 +6,6 @@ Link to Repo: [GITHUB-REPO](https://github.com/mhowitz/planet-express-js)
 
 Link to deployed site: [HEROKU-Link](https://planet-express-js.herokuapp.com/)
 
-Link to deployed site: [HEROKU-Link]https://planet-express-js.herokuapp.com/
 
 ## Description
 
