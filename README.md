@@ -28,9 +28,9 @@ Planet Express.js is a beautiful, unique resource library created by a team of e
 
 Find needed resources quickly by using our patented filter functions! Log in to your own profile to see resources you’ve previously posted and even comment and upvote resources posted by other users!
 
-Link to Walk-through Video: [VIDEO](https://drive.google.com/file/d/1-LsmdOaUTLL-mcsryreK-061a-GOLecR/view)
+Link to Walk-through Video: [VIDEO](https://youtu.be/pJSaqMgbeCU)
 
-![submitting-an-article](/images/Planet_Express_js.jpg)
+![submitting-an-article](/public/images/Planet_Express_js.jpg)
 
 homepage:
 
