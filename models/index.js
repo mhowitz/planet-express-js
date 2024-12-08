@@ -59,13 +59,13 @@ User.belongsToMany(Articles, {
     as: 'voted_articles',
     foreignKey: 'user_id',
     // onDelete: 'SET NULL'
-  });
-  
- Articles.belongsToMany(User, {
+});
+
+Articles.belongsToMany(User, {
     through: Vote,
     as: 'articles_voted',
     foreignKey: 'article_id',
     // onDelete: 'SET NULL'
-  });
+});
 
 module.exports = { User, Category, Articles, Comment, Vote };
